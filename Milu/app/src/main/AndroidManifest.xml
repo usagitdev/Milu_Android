@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="charles.com.milu">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA7rVQDL257fM4Hv0pBfByPXCOfdDgILd4" />
+
+        <activity android:name=".Splash.splash"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login.LoginActivity"
+            tools:ignore="InnerclassSeparator"/>
+        <activity android:name=".Login.RegistrationActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".Base.MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".HomeScreen.Tabbar"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".LiveEvents.LiveMediaPost.LiveMediaPostMainActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".MediaSelect_Activity.MediaSelectActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".utils.awesomeimagepicker.activities.AlbumSelectActivity"/>
+        <activity android:name=".utils.awesomeimagepicker.activities.ImageSelectActivity"/>
+        <activity android:name=".LiveEvents.LiveFeedMingleFragment.LiveMingleInstagramActivity"/>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+        <!--<ImageView-->
+            <!--android:id="@+id/liveEvent_CellImage"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+        <RelativeLayout
+            android:id="@+id/liveEvent_Celllayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <net.lucode.hackware.selfdependlayout.SelfDependLayout
+                    android:id="@+id/liveEvent_Eventcount"
+                    android:background="#D9121314"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:dependWidth="false"
+                    app:dependencyRatio="1"
+                    android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+                                <charles.com.milu.CustomViews.TitleTextView
+                                    android:id="@+id/liveEvent_Count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4K"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="44sp"/>
+
+                                <charles.com.milu.CustomViews.TitleTextView
+                                    android:id="@+id/liveEvent_NumStr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="people"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="-7dp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:alpha="0.5"
+                                    android:layout_alignBottom="@+id/liveEvent_Count"
+                                    android:textSize="16sp"/>
+
+                        </RelativeLayout>
+
+                </net.lucode.hackware.selfdependlayout.SelfDependLayout>
+
+                <RelativeLayout
+                    android:id="@+id/liveEvent_ImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@+id/liveEvent_Eventcount">
+
+                        <ViewAnimator
+                            android:id="@+id/animator"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#ffc0c0c0"
+                            android:animateFirstView="false">
+
+                        </ViewAnimator>
+                        <ImageView
+                            android:id="@+id/liveEvent_Image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/arts"
+                            android:scaleType="centerCrop"/>
+
+                        <ImageView
+                            android:id="@+id/liveEvent_Gradient"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/cellgradient2"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical">
+
+                                <charles.com.milu.CustomViews.RegularTitleTextView
+                                    android:id="@+id/liveEvent_Eventname"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20.0dp"
+                                    android:text="chemical brother"
+                                    android:textColor="@color/colorWhite"
+                                    android:layout_marginBottom="-3dp"
+                                    android:textSize="18.0sp"/>
+
+                                <charles.com.milu.CustomViews.TitleTextView
+                                    android:id="@+id/liveEvent_Eventlikes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20.0dp"
+                                    android:text="chemical brother"
+                                    android:layout_marginBottom="2dp"
+                                    android:textColor="@color/color_Manatee"
+                                    android:textSize="18.0sp"/>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom|end"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/event_list_rating_star_icon"/>
+
+                                <charles.com.milu.CustomViews.RegularTitleTextView
+                                    android:id="@+id/liveEvent_ranking"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="5.0"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
+                </RelativeLayout>
+        </RelativeLayout>
+
+</RelativeLayout>

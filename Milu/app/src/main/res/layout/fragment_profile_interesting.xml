@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dragAndDrop="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:radius="24"
+        android:src="@drawable/user01"/>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="44dp"
+        android:paddingTop="@dimen/dimen_56">
+
+        <co.lujun.androidtagview.TagContainerLayout
+            android:id="@+id/tagcontainerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dimen_16"
+            app:container_background_color="@color/transparent"
+            app:container_border_color="@color/transparent"
+            app:container_border_radius="0dp"
+            app:container_border_width="0dp"
+            app:container_enable_drag="true"
+            app:horizontal_interval="16dp"
+            app:tag_background_color="@color/transparent"
+            app:tag_border_color="@color/color_tag"
+            app:tag_border_width="1dp"
+            app:tag_clickable="true"
+            app:tag_corner_radius="18dp"
+            app:tag_enable_cross="false"
+            app:tag_ripple_duration="100"
+            app:tag_text_color="@color/color_tag"
+            app:tag_text_size="17sp"
+            app:tag_theme="none"
+            app:vertical_interval="10dp" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/layout_toolbar"/>
+    <ImageButton
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_button"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="@dimen/dimen_56"/>
+
+    <ImageButton
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trash_button"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="@dimen/dimen_56"
+        android:visibility="gone"/>
+
+</FrameLayout>

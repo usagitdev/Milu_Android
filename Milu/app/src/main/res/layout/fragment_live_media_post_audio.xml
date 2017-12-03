@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LiveEvents.LiveMediaPost_Audio.LiveMediaPost_AudioFragment"
+    android:fitsSystemWindows="true">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:radius="24"
+        android:src="@drawable/user01"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_Onyx"
+        android:alpha="0.3"/>
+
+    <RelativeLayout
+        android:id="@+id/blur_drawable_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

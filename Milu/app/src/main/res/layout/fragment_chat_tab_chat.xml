@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:radius="18"
+        android:src="@drawable/user01"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="104dp"
+        android:paddingBottom="44dp"
+        android:clipToPadding="false"
+        android:clipChildren="false"/>
+
+
+
+
+
+</RelativeLayout>

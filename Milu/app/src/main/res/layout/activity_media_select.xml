@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:picker="http://schemas.android.com/tools"
+    android:background="@color/color_MediumJungleGreen"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="29dp"
+        android:id="@+id/mediaSelect_TitleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:paddingRight="18dp"
+        android:paddingLeft="18dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/mediaSelect_backicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/nav_bar_cancel_icon"/>
+
+        <ImageView
+            android:id="@+id/mediaSelect_BackButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/mediaSelect_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/mediaSelect_backicon"
+            android:text="select"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textColor="@color/color_Milumain"
+            android:layout_marginLeft="33dp"/>
+
+        <ImageView
+            android:id="@+id/mediaSelect_CheckButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/path_3"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/mediaSelect_TitleBar"
+        android:id="@+id/mediaSelect_Stepbar"
+        android:layout_width="fill_parent"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/mediaSelect_button1"
+            android:layout_centerVertical="true"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@xml/mediaselect_rounded_button"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_toRightOf="@+id/mediaSelect_button1"
+            android:background="@color/color_Milumain"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/mediaSelect_button2_un"/>
+
+        <ImageView
+            android:id="@+id/mediaSelect_button2_un"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/mediaselect_bordered_blue_button"/>
+
+
+
+        <ImageView
+            android:id="@+id/mediaSelect_button2_sel"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@xml/mediaselect_rounded_button"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_toRightOf="@+id/mediaSelect_button2_un"
+            android:background="@color/color_Milumain"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/mediaSelect_button3_un"/>
+
+        <ImageView
+            android:id="@+id/mediaSelect_button3_un"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/mediaselect_bordered_blue_button"/>
+
+
+
+
+    </RelativeLayout>
+
+    <charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager
+        android:layout_below="@+id/mediaSelect_Stepbar"
+        android:id="@+id/mediaSelectViewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="app_name">Milu</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string-array name="values">
+    <item>Item 1</item>
+    <item>Item 2</item>
+    <item>Item 3</item>
+    <item>Item 4 is really long</item>
+    <item>Item 5</item>
+    <item>Item 6</item>
+  </string-array>
+  <string name="add_tag">Add Tag</string>
+  <!-- Global Feed String Data-->
+  <string name="globalfeed_description">Being the savages bowsman, that is, the person who pulled the bow-oar in his Being the savages bowsman, that is, the person who pulled the bow-oar in his</string>
+  <string name="globalfeed_property">18H  AGO   144 LIKES   31  COMMENTS   5K  VIEWS</string>
+  <string name="globalfeed_description1">looking for an experienced web developer who can take invision prototypes and other graphics</string>
+  <string name="globalfeed_property1">20H AGO 244 LIKES  45 COMMENTS   50K  VIEWS</string>
+  <string name="globalfeed_description2">details, we are looking for an senior full stack developer to help us build/maintain multiple dashborads with</string>
+  <string name="globalfeed_property2">324H AGO  4564 LIKES  456 COMMENTS 56K  VIEWS</string>
+  <string name="globalfeed_description3">nodejs angular react ionic android web development within 2~3 weeks with intermdiate</string>
+  <string name="globalfeed_property3">20H AGO  6768 LIKES  34 COMMENTS   55K  VIEWS</string>
+  <string name="globalfeed_description4">we are looking for a talented php front end developer with experience in laravel</string>
+  <string name="globalfeed_property4">123H AGO  3 LIKES  23 COMMENTS   50K  VIEWS</string>
+  <string name="globalfeed_description5">need looking for an experienced mobile ui ux designer to redesign an existing app must have experience re</string>
+  <string name="globalfeed_property5">567H AGO  2342 LIKES  90 COMMENTS   578K  VIEWS</string>
+  <string name="globalfeed_description6">ios and android transportation application like uber this is one time project with opportunity to turn into a</string>
+  <string name="globalfeed_property6">67H AGO  435 LIKES  34 COMMENTS   45K  VIEWS</string>
+  <string name="font_light">WorkSans-Light.ttf</string>
+  <string name="andrea_bocceli">andrea bocceli</string>
+  <string name="liveMingle_UserResumeStr">a humorous fast at both ends; fast to queequegs broad canbas belt, and fast to my narrow leather a humorous fast at both ends; fast to queequegs broad canbas belt, and fast to my narrow leather</string>
+  <string name="upcomingHost_DescriptionTxt">if you find yourself doing the same routine day after day, never remembering what you did the day before, having nothing to look forward to, living your life - but never enjoying it or anything in it... you are probably living your life and the relationships in it autopilot. if you find your self doing the same</string>
+  <string name="upcomingHost_APR25Txt">this is a usper long event title that takes up two lines</string>
+  <string name="upcomingHost_APR27Txt">this is another long even title but titles can take up one line too</string>
+  <string name="liveMediaPost_RatingText">this is another long even title but titles can take up one line too</string>
+  <string name="liveMediaPost_CritiqueText">Critique only have 140 characters because of a character count limit. This is to distinguish critiques</string>
+  <string name="tuto_text1">discover the highest ranking \n events around you, \n tailored to your interests</string>
+  <string name="tuto_text2">quickly find cool people \n with common interests \n at the event or in the room</string>
+  <string name="tuto_txt3">chat with anyone and everyone \n at any event or location \n as you or anonymously</string>
+  <string name="clear_cache_menu">Clear Caches</string>
+  <string name="clear_cache_complete_toast">Caches have been cleared</string>
+  <string name="imageview_description">Image Thumbnail</string>
+  <string name="no_network_connection_toast">No network connection found</string>
+  <string name="str_login">oops! you must be logged in to send and accept invitations.\n\nlog in now to use all of the amazing features of milu!</string>
+  <string name="help_amp_support"><![CDATA[help & support]]></string>
+  <string name="event_setting_des">turning mingle on will allow people at your event to connect virtually at the event based on their preferences. turning on networking will ignore user preferences and allow professional connections to be made with everyone!</string>
+  <!--Request Permission-->
+  <string name="permission_info">App requires permission to Storage to view images.</string>
+  <string name="permission_force">App requires permission to Storage to view images. Tap Settings and go to Permissions to grant permission.</string>
+  <string name="permission_ok">OK</string>
+  <string name="permission_settings">Settings</string>
+  <string name="permission_package">package</string>
+  <string name="album_view">Select photo album</string>
+  <string name="image_view">Tap to select images</string>
+  <string name="selected">selected</string>
+  <string name="limit_exceeded">Can select a maximum of %d images</string>
+  <string name="error_null_cursor">Oops, something went wrong!</string>
+  <string name="add">SELECT</string>
+  <string name="capture_photo">Capture Photo</string>
+  <string name="dorisnichols">Doris Nichols</string>
+</resources>
+

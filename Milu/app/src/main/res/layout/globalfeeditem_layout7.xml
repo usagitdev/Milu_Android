@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/world_feedview"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/globalfeed_feedImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:layout_alignBottom="@+id/v1"
+        android:layout_alignParentTop="true"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_navbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/v1"
+        />
+    <LinearLayout
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:background="@color/color_navbar"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dimen_52">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/globalfeed_userImage"
+                android:layout_width="@dimen/dimen_36"
+                android:layout_height="@dimen/dimen_36"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimenMargin_08"
+                app:civ_border_width="0.5dp"
+                app:civ_border_color="@color/colorBlack"/>
+
+            <charles.com.milu.CustomViews.TitleTextView
+                android:id="@+id/globalfeed_userName"
+                android:layout_width="@dimen/dimen_100"
+                android:layout_height="@dimen/dimen_16"
+                android:layout_toEndOf="@+id/globalfeed_userImage"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_08"
+                android:text="@string/andrea_bocceli"
+                fontPath="@+sting/font_light"
+                android:textSize="@dimen/dimenFont_14"/>
+
+            <RelativeLayout
+                android:layout_width="36dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="4dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:id="@+id/globalfeed_upboteButton1"
+                    android:layout_width="25dp"
+                    android:layout_height="12dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/feed_up_vote_icon"/>
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/globalfeed_upvoteCount"
+                    android:layout_width="30dp"
+                    android:layout_height="@dimen/dimen_16"
+                    android:layout_centerVertical="true"
+                    android:text="1.4K"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/dimenFont_14"/>
+
+                <ImageView
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/globalfeed_upboteButton2"
+                    android:layout_width="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="12dp"
+                    android:background="@drawable/feed_down_vote_icon" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:src="@drawable/feed_open_quote_icon"/>
+
+            <charles.com.milu.CustomViews.TitleTextView
+                android:id="@+id/globalfeed_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="24.0sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/dimen_16"
+                android:text="Critiques only have 140 characters because of a character count limit. This is to distinguish critiques from a message and keep them brief."/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/feed_closed_quote_icon"
+                android:layout_marginEnd="@dimen/dimen_12"
+                android:layout_gravity="bottom|end"/>
+
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:background="@color/color_navbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/view2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/txt_posttime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textColor="@color/color_OuterSpace"
+                    android:textSize="@dimen/dimenFont_13"
+                    android:gravity="center"
+                    android:text="15H AGO"/>
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/txt_likes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textColor="@color/color_OuterSpace"
+                    android:textSize="@dimen/dimenFont_13"
+                    android:gravity="center"
+                    android:text="150 LIKES"/>
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/txt_comments"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_OuterSpace"
+                    android:textSize="@dimen/dimenFont_13"
+                    android:gravity="center"
+                    android:text="33 COMMENTS"/>
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/txt_views"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textColor="@color/color_OuterSpace"
+                    android:textSize="@dimen/dimenFont_13"
+                    android:gravity="center"
+                    android:text="5K VIEWS"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:layout_below="@id/view2">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_16">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="10">
+
+                        <ImageView
+                            android:id="@+id/globlafeed_likeButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:background="@drawable/feed_like_icon"
+                            android:layout_gravity="center"
+                            android:focusable="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="10">
+
+                        <ImageView
+                            android:id="@+id/globlafeed_chatButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/feed_comment_icon" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:id="@+id/globlafeed_shareButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/feed_share_icon" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/globlafeed_moreButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/feed_overflow_icon"
+                            android:layout_marginEnd="16dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

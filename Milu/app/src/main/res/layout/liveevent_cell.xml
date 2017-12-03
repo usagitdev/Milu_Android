@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+                <net.lucode.hackware.selfdependlayout.SelfDependLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    app:dependWidth="false"
+                    app:dependencyRatio="1"
+                    android:id="@+id/liveEvent_Eventcount">
+
+                        <charles.com.milu.Utility.SquareAvatarImageView
+                            android:id="@+id/squre_image"
+                            android:layout_width="match_parent"
+                            android:background="@drawable/sq_1_blur_vd"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                                <charles.com.milu.CustomViews.TitleTextView
+                                    android:id="@+id/liveEvent_Count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4K"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="44sp"/>
+
+                                <charles.com.milu.CustomViews.TitleTextView
+                                    android:id="@+id/liveEvent_NumStr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="people"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="-5dp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+
+
+                </net.lucode.hackware.selfdependlayout.SelfDependLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                            android:id="@+id/liveEvent_Image"
+                            android:layout_width="match_parent"
+                            android:scaleType="centerCrop"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/event3"/>
+
+                        <ImageView
+                            android:id="@+id/liveEvent_gradient"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cellgradient2"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="5dp">
+
+                                        <charles.com.milu.CustomViews.RegularTitleTextView
+                                            android:id="@+id/liveEvent_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="juan burns"
+                                            android:textColor="@color/colorWhite"
+                                            android:layout_marginBottom="-3dp"
+                                            android:textSize="18sp"/>
+
+                                        <charles.com.milu.CustomViews.TitleTextView
+                                            android:id="@+id/liveEvent_likes"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="2K people"
+                                            android:textSize="18sp"
+                                            android:textColor="@color/Munsell"/>
+
+                                </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/events_rating_star"/>
+
+                                <charles.com.milu.CustomViews.TitleTextView
+                                    android:id="@+id/liveEvent_ranking"
+                                    android:layout_width="32dp"
+                                    android:layout_height="21dp"
+                                    android:text="5.0"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"/>
+
+                        </RelativeLayout>
+
+                </RelativeLayout>
+
+        </LinearLayout>
+
+</RelativeLayout>

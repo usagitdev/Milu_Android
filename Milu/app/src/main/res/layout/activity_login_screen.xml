@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/registration_background">
+
+            <android.support.v4.view.ViewPager
+                android:layout_marginTop="10dp"
+                android:id="@+id/login_ViewPager"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_above="@+id/paginate"
+                android:layout_height="match_parent">
+            </android.support.v4.view.ViewPager>
+
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/paginate"
+                android:layout_width="fill_parent"
+                android:layout_above="@+id/fLogLayout"
+                android:layout_height="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/icon1"
+                        android:background="@drawable/indicator_round"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp" />
+
+                    <ImageView
+                        android:layout_toRightOf="@+id/icon1"
+                        android:id="@+id/icon2"
+                        android:layout_width="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/indicator_round"
+                        android:layout_height="8dp" />
+
+                    <ImageView
+                        android:layout_toRightOf="@+id/icon2"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/icon3"
+                        android:layout_width="8dp"
+                        android:background="@drawable/indicator_round"
+                        android:layout_height="8dp" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fLogLayout"
+                    android:layout_marginTop="24dp"
+                    android:layout_alignParentBottom="true"
+                    android:paddingRight="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/floginLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="floginClicked"
+                        android:layout_centerHorizontal="true">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/login"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="login"
+                            android:textSize="@dimen/dimenFont_20"
+                            android:textColor="@color/white"
+                            android:layout_toRightOf="@+id/floginButton"/>
+
+                        <ImageView
+                            android:id="@+id/floginButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/registration_facebook_icon"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/skipButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="skip"
+                        android:layout_centerVertical="true"
+                        android:onClick="skipClicked"
+                        android:textSize="@dimen/dimenFont_20"
+                        android:layout_marginRight="@dimen/dimen_16"/>
+
+                </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,557 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/eventDashLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/color_Onyx"
+        android:orientation="horizontal"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="48dp"
+        android:weightSum="360">
+
+
+        <RelativeLayout
+            android:id="@+id/firstView"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="334">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:weightSum="40">
+
+                <LinearLayout
+                    android:id="@+id/eventDash_livehotView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+<!--  live event tile -->
+
+                    <RelativeLayout
+                        android:id="@+id/liveEventLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/eventdash_live_event_gradient"
+                        android:clickable="true">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/liveEvent_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="75"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:background="@drawable/icon_events_streaming_live" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/liveEvent_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.7"
+                            android:text="live events"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <!-- hot event tile-->
+                    <RelativeLayout
+                        android:id="@+id/hotEventLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="2"
+                        android:background="@color/color_Milumain"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/hteventback" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/cellgradient2" />
+
+                        <charles.com.milu.CustomViews.RegularTitleTextView
+                            android:id="@+id/hotEvent_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="5dp"
+                            android:text="hot events"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18dp" />
+
+                        <charles.com.milu.CustomViews.RegularTitleTextView
+                            android:id="@+id/hotEvent_count"
+                            android:layout_marginBottom="-8dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:text="128"
+                            android:textColor="@color/colorWhite"
+                            android:textAlignment="viewEnd"
+                            android:textSize="43sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventDash_upfavView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+<!-- upcoming event tile -->
+
+                    <RelativeLayout
+                        android:id="@+id/upComingLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/eventdash_live_event_gradient"
+                        android:clickable="true">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/upEvent_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="12"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/icon_events_clock" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/upEvent_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.6"
+                            android:text="upcoming"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/favEvnetLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/favouriteback"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/cellgradient2" />
+
+                        <charles.com.milu.CustomViews.RegularTitleTextView
+                            android:id="@+id/favEvent_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="5dp"
+                            android:text="favorite events"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18.06sp" />
+
+                        <charles.com.milu.CustomViews.RegularTitleTextView
+                            android:layout_marginBottom="-8dp"
+                            android:id="@+id/favEvent_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:gravity="end"
+                            android:text="07"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="43sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventDash_mycaView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:id="@+id/myEventLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/places_gradient"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:background="@drawable/events_dashboard_user_icon" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/myEvent_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.6"
+                            android:text="my events"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <!-- new event tile -->
+                    <RelativeLayout
+                        android:id="@+id/newEventLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/eventdash_live_event_gradient"
+                        android:clickable="true">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="04"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/events_dashboard_new_icon" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.6"
+                            android:text="new events"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+
+                    </RelativeLayout>
+
+                    <!-- canendar tile -->
+                    <RelativeLayout
+                        android:id="@+id/calLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/eventdash_live_event_gradient"
+                        android:clickable="true">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/calEvent_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="03"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:id="@+id/calEvent_mon"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="JUL"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="19sp" />
+
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:id="@+id/calEvent_date"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-12dp"
+                                android:text="20"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="32sp" />
+
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/events_dashboard_calendar_icon" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/calEvent_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.6"
+                            android:text="calendar"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventDash_meinView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:id="@+id/meetLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:background="@drawable/food"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/cellgradient2" />
+
+                        <charles.com.milu.CustomViews.RegularTitleTextView
+                            android:id="@+id/meetUp_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="4dp"
+                            android:text="meetups"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18dp" />
+
+                        <charles.com.milu.CustomViews.RegularTitleTextView
+                            android:layout_marginBottom="-8dp"
+                            android:id="@+id/meetUp_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:gravity="end"
+                            android:text="2K"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="43dp" />
+
+                    </RelativeLayout>
+
+                    <!-- invitaiton  tile -->
+
+                    <RelativeLayout
+                        android:id="@+id/inviteLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/eventdash_live_event_gradient"
+                        android:clickable="true">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/invite_count"
+                            android:layout_width="20dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="12"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/events_dashboard_inbox_icon" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/invite_title"
+                            android:layout_width="80dp"
+                            android:layout_height="19dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.6"
+                            android:text="invitation"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:weightSum="360">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="334" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="26"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/eventDash_sideView1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentRight="true"
+                            android:clickable="true" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/secondView"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="334"
+            android:background="@color/color_Onyx"
+            android:layout_marginLeft="1dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/eventDash_RecyclerView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:weightSum="360">
+
+                <ImageView
+                    android:id="@+id/eventDash_sideView2"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="26" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

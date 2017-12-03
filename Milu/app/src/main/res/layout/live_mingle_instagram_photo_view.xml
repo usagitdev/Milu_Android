@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@color/color_TitleBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/user_profile_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center_vertical">
+
+            <charles.com.milu.Utility.SquareImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:id="@+id/user_avatar"
+                android:src="@drawable/user07"
+                android:layout_marginStart="@dimen/dimen_12"/>
+
+            <charles.com.milu.CustomViews.TitleTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:text="marthachapman"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="@dimen/dimen_08"/>
+
+            <charles.com.milu.CustomViews.TitleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ago_time"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="3w"
+                android:gravity="end"
+                android:layout_marginEnd="@dimen/dimen_12"
+                android:layout_gravity="end|center_vertical"/>
+        </LinearLayout>
+
+        <net.lucode.hackware.selfdependlayout.SelfDependLayout
+            android:layout_marginTop="@dimen/dimen_04"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:dependWidth="true"
+            app:dependencyRatio="1"
+            android:layout_below="@+id/user_profile_view"
+            >
+
+            <ooo.oxo.library.widget.TouchImageView
+                android:id="@+id/instagram_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+        </net.lucode.hackware.selfdependlayout.SelfDependLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

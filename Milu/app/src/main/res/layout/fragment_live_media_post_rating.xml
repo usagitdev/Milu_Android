@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="80dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LiveEvents.LiveMediaPost_Rating.LiveMediaPost_RatingFragment">
+
+    <com.xl.ratingbar.MyRatingBar
+        android:id="@+id/liveMediaPost_Myratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        app:clickable="true"
+        app:starCount="5"
+        app:starNum="1"
+        app:halfstart="false"
+        app:starEmpty="@drawable/share_rating_star_empty"
+        app:starFill="@drawable/share_rating_star_filled"
+        app:starImageHeight="33dp"
+        app:starImageWidth="33dp"
+        app:starImagePadding="9dp"
+        >
+
+    </com.xl.ratingbar.MyRatingBar>
+
+    <EditText
+        android:background="@color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/liveMediaPost_RatingTxt"
+        android:layout_below="@+id/liveMediaPost_Myratingbar"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:fontFamily="WorkSans-Light"
+        android:text="@string/liveMediaPost_RatingText"/>
+
+
+</RelativeLayout>

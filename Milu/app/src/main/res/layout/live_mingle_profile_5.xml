@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_TitleBar">
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nav_bar_cancel_icon"
+        android:background="@color/transparent"
+        android:layout_marginTop="@dimen/dimen_12"
+        android:layout_marginStart="@dimen/dimen_12"
+        android:layout_alignParentTop="true"/>
+
+
+    <com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager
+        android:layout_marginTop="@dimen/dimen_56"
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rvp_triggerOffset="0"
+        app:rvp_singlePageFling="true"
+        android:clipToPadding="false"/>
+
+</FrameLayout>

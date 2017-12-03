@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:fontPath="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="103dp">
+
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_width="20dp"
+            android:layout_height="11dp"
+            android:text="1st"
+            android:id="@+id/liveMingle_ConnectionLevel"
+            android:textAlignment="inherit"
+            android:textSize="10sp"
+            android:textColor="@color/color_OuterSpace"
+            android:layout_alignParentStart="true"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/liveMingle_ConnectionImage"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_centerHorizontal="true"
+            app:civ_border_width="0.5dp"
+            app:civ_border_color="@color/colorBlack"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/liveMingle_ConnectionName"
+            android:layout_below="@+id/liveMingle_ConnectionImage"
+            android:textSize="11sp"
+            android:textColor="@color/color_Oldlavender"
+            android:gravity="center"
+            android:text="kevin mccoy"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

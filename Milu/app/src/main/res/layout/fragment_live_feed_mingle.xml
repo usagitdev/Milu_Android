@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bb_darkBackgroundColor"
+    android:orientation="vertical">
+
+    <com.mindorks.placeholderview.SwipeDirectionalView
+        android:id="@+id/swipeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/liveMingle_refreshButton"
+                android:background="@drawable/mingle_refresh_icon1"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/liveMingle_rejectButton"
+                android:background="@drawable/mingle_x_icon1"/>
+
+            <ImageButton
+                android:id="@+id/liveMingle_boostButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/mingle_boost_icon1" />
+
+            <ImageButton
+                android:id="@+id/liveMingle_likeButton"
+                android:background="@drawable/mingle_like_icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/liveMingle_superlikeButton"
+                android:background="@drawable/mingle_super_like_icon1"/>
+
+        </LinearLayout>
+
+    </com.mindorks.placeholderview.SwipeDirectionalView>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:id="@+id/liveMingle_userDetailPage">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/liveMingle_userImagesLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="280dp">
+
+                    <com.jude.rollviewpager.RollPagerView
+                        android:id="@+id/liveMingle_userDetailimagesViewPager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        app:rollviewpager_play_delay="3000"/>
+
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="17dp">
+
+                        <ImageView
+                            android:id="@+id/liveMingle_userDetailPagebackButton"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/button_rounded"/>
+
+
+                        <ImageView
+                            android:layout_width="13dp"
+                            android:layout_height="28dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/mingle_down_icon"/>
+
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/liveMingle_userNamesLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="77dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_below="@+id/liveMingle_userImagesLayout">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:weightSum="320"
+                        android:layout_marginLeft="16dp">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="diane, 22"
+                            android:id="@+id/liveMingle_userName"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="server at high on the hog"
+                            android:id="@+id/liveMingle_userJob"
+                            android:textColor="@color/color_Silver"
+                            android:textSize="17sp"/>
+
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="15ft away"
+                            android:id="@+id/liveMingle_userWay"
+                            android:textColor="@color/color_DimGray"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_MediumJungleGreen"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp">
+
+                        <ImageView
+                            android:id="@+id/liveMingle_ShareButton"
+                            android:layout_width="28dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/feed_share_icon"
+                            android:layout_marginRight="15dp"
+                            android:layout_toLeftOf="@+id/liveMingle_OverFlowButton"/>
+
+                        <ImageView
+                            android:id="@+id/liveMingle_OverFlowButton"
+                            android:layout_width="5dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/feed_overflow_icon"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/liveMingle_UserResumLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:layout_below="@+id/liveMingle_userNamesLayout">
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/liveMingle_UserresumeTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/liveMingle_UserResumeStr"
+                        android:textColor="@color/colorWhite"
+                        android:textAlignment="center"
+                        android:paddingBottom="7dp"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/color_MediumJungleGreen"
+                        android:layout_below="@+id/liveMingle_UserresumeTxt"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="7dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/liveMingle_InterestsLayOut"
+                    android:layout_below="@+id/liveMingle_UserResumLayout"
+                    android:layout_width="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:layout_height="match_parent">
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/liveMingle_InterestsTitle"
+                        android:text="common interests"
+                        android:textSize="17sp"
+                        android:textColor="@color/color_Platinum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:id="@+id/liveMingle_InterestTxtLayout"
+                            android:layout_below="@+id/liveMingle_InterestsTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:id="@+id/liveMingle_CampingTxt"
+                                android:layout_width="83dp"
+                                android:layout_height="24dp"
+                                android:text="camping"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="17sp"
+                                android:background="@drawable/button_bordered"
+                                android:textColor="@color/color_Milumain"
+                                android:textAlignment="center"/>
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:id="@+id/liveMingle_StarTxt"
+                                android:layout_width="83dp"
+                                android:layout_height="24dp"
+                                android:text="star wars"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/button_bordered"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="17sp"
+                                android:textColor="@color/color_Milumain"
+                                android:textAlignment="center"/>
+
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:id="@+id/liveMingle_FootTxt"
+                                android:layout_width="83dp"
+                                android:layout_height="24dp"
+                                android:text="football"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/button_bordered"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="17sp"
+                                android:textColor="@color/color_Milumain"
+                                android:textAlignment="center"/>
+
+                        </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/color_MediumJungleGreen"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/liveMingle_InterestTxtLayout"
+                        android:layout_marginTop="16dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/liveMingle_ConnectionLayoput"
+                    android:layout_below="@+id/liveMingle_InterestsLayOut"
+                    android:layout_width="match_parent"
+                    android:paddingTop="6dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:layout_height="match_parent">
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/liveMingle_ConnectionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="common connections"
+                        android:textSize="17sp"
+                        android:textColor="@color/color_Platinum"
+                        />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_below="@+id/liveMingle_ConnectionTitle"
+                        android:id="@+id/liveMingle_ConnectionRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="234dp">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/color_MediumJungleGreen"
+                        android:layout_below="@+id/liveMingle_ConnectionRecyclerView"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/liveMingle_InstagramLayout"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:layout_below="@+id/liveMingle_ConnectionLayoput">
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/liveMingle_InstagramTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="1167 instagram photos"
+                        android:textSize="17sp"
+                        android:textColor="@color/color_Platinum"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_below="@+id/liveMingle_InstagramTitle"
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/liveMingle_InstagramRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                    <LinearLayout
+                        android:id="@+id/liveMingle_InstagramConnectTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/liveMingle_InstagramRecyclerView"
+                        android:layout_marginTop="20dp">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/liveMingle_Sharetxt"
+                            android:layout_width="230dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/color_Platinum"
+                            android:text="share your instagram photos too"
+                            android:textSize="14sp"/>
+
+                        <ImageView
+                            android:id="@+id/liveMingle_InstagramIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/mingle_instagram_icon"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/liveMingle_InstagramConTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CONNECT"
+                            android:textSize="12sp"
+                            android:textColor="@color/color_Milumain"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/color_MediumJungleGreen"
+                        android:layout_below="@+id/liveMingle_InstagramConnectTxt"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/recommentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="16dp"
+                    android:paddingRight="16dp"
+                    android:layout_below="@+id/liveMingle_InstagramLayout">
+
+                    <LinearLayout
+                        android:id="@+id/liveMingle_FriendLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/liveMingle_RecommendTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RECOMMEND DIANE"
+                            android:textColor="@color/color_Milumain"
+                            android:textSize="16sp"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"/>
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/liveMingle_FriendTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TO A FRIEND"
+                            android:textColor="@color/color_Milumain"
+                            android:textSize="16sp"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"/>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/color_MediumJungleGreen"
+                        android:layout_below="@+id/liveMingle_FriendLayout"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_below="@+id/recommentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_100"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/liveMingle_DetailButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/liveMingle_DetailPageRejectButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/mingle_x_icon1"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/liveMingle_DetailPageSuperLikeButton"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/mingle_super_like_icon"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/liveMingle_DetailPageLikeButton"
+                android:background="@drawable/mingle_like_icon1"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

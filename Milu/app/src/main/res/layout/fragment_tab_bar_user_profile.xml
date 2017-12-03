@@ -1,0 +1,289 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dimen_56"
+        android:paddingBottom="44dp"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/places_gradient">
+
+            <RelativeLayout
+                android:id="@+id/topPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/profileBackImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_220"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/follower09" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_200"
+                    android:layout_below="@id/profileBackImageView"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_65">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_25"
+                            android:layout_height="@dimen/dimen_25"
+                            android:layout_marginLeft="59.0dp"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:src="@drawable/profile_trophies_icon" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_25"
+                            android:layout_height="@dimen/dimen_25"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="59dp"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:src="@drawable/profile_notifications_icon" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/txtUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="virginia tucker"
+                            android:textSize="18.0sp" />
+
+                        <charles.com.milu.CustomViews.ExtraLightTextView
+                            android:id="@+id/txtUserPoint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="1,024 points"
+                            android:textSize="16.0sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_16"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:paddingEnd="@dimen/dimen_12">
+
+                            <ImageView
+                                android:id="@+id/open_quote"
+                                android:layout_width="18.0dp"
+                                android:layout_height="15.0dp"
+                                android:src="@drawable/profile_open_quote_icon1" />
+                        </LinearLayout>
+
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/txtUserWord"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:gravity="center"
+                            android:text="just a small town girl living ina lonely world"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="1"
+                            android:paddingStart="@dimen/dimen_12">
+
+                            <ImageView
+                                android:id="@+id/closed_quote"
+                                android:layout_width="18.0dp"
+                                android:layout_height="15.0dp"
+                                android:src="@drawable/profile_closed_quote_icon1" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/txtMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="more" />
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/user01" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/instagram_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topPanel"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14sp"
+                    android:textColor="@color/white"
+                    android:text="instagram"/>
+
+                <GridView
+                    android:id="@+id/grid_instagram"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/connections_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/instagram_panel"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14sp"
+                    android:textColor="@color/white"
+                    android:text="connections"/>
+
+                <GridView
+                    android:id="@+id/grid_connections"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/moments_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_below="@+id/connections_panel"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14sp"
+                    android:textColor="@color/white"
+                    android:text="moments"/>
+
+                <GridView
+                    android:id="@+id/grid_moments"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/events_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_below="@+id/moments_panel"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14sp"
+                    android:textColor="@color/white"
+                    android:text="events"/>
+
+                <GridView
+                    android:id="@+id/grid_events"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/interests_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_below="@+id/events_panel"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14sp"
+                    android:textColor="@color/white"
+                    android:text="interests"/>
+
+                <GridView
+                    android:id="@+id/grid_interests"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/layout_toolbar"/>
+
+
+</FrameLayout>

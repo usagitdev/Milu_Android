@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:radius="24"
+        android:src="@drawable/user01"/>
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <LinearLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_60"
+            android:padding="@dimen/dimen_08"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@color/grid_state_focused"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <charles.com.milu.CustomViews.TitleTextView
+                android:id="@+id/buy_more_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginStart="@dimen/dimen_08"
+                android:textSize="20sp"
+                android:textColor="@color/color_Milumain"
+                android:text="BUY MORE"/>
+
+            <charles.com.milu.CustomViews.TitleTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginStart="@dimen/dimen_08"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:text="10 CREDITS"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40">
+
+            <charles.com.milu.CustomViews.TitleTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:textSize="14.0sp"
+                android:textColor="@color/color_DimGray"
+                android:text="discovery settings"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grid_state_focused"
+            android:padding="@dimen/dimen_08"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/interest_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_31"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/dimen_08"
+                    android:textColor="@color/white"
+                    android:text="interests"/>
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/txt_interest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_31"
+                    android:gravity="center_vertical|right"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/dimen_08"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_25"
+                    android:text="women"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/settings_next_icon3"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/dimen_08"
+                android:background="@color/color_DimGray"/>
+
+            <RelativeLayout
+                android:id="@+id/age_of_range_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_31"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/dimen_08"
+                    android:textColor="@color/white"
+                    android:text="age of range"/>
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/txt_age_of_range"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_08"
+                    android:textSize="16.0sp"
+                    android:text="18-25"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <SeekBar
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:layout_marginBottom="@dimen/dimen_16"
+                    android:id="@+id/seek_age_of_range"
+                    android:layout_marginTop="@dimen/dimen_08"
+                    android:theme="@style/AppTheme"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_36"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@color/grid_state_focused"
+            android:orientation="horizontal">
+            <charles.com.milu.CustomViews.TitleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="show me in mingle"/>
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_show_me_mingle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dimen_08"
+                style="@style/SwitchStyle"/>
+
+        </RelativeLayout>
+
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:textColor="@color/color_DimGray"
+            android:text="turning this on will present you to single users near you"/>
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

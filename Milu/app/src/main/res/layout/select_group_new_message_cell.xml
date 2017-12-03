@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:id="@+id/conversationCell"
+    android:layout_height="52dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <charles.com.milu.Utility.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="@dimen/dimen_36"
+            android:layout_height="@dimen/dimen_36"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_centerVertical="true"
+            android:src="@drawable/user01" />
+
+        <charles.com.milu.CustomViews.TitleTextView
+            android:id="@+id/user_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="Linda welch"
+            android:alpha="0.7"
+            android:layout_marginStart="@dimen/dimen_68"
+            android:layout_centerVertical="true"
+            android:textAllCaps="false"/>
+
+        <View
+            android:id="@+id/underline"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="@dimen/dimen_60"
+            android:background="@color/color_OuterSpace"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+</RelativeLayout>

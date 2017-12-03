@@ -1,0 +1,67 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_navbar">
+
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:radius="10"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/user06"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_Onyx"
+        android:alpha="0.5"/>
+    <LinearLayout
+        android:id="@+id/empty_feed_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/empty_data_set_yawning_icon"
+            />
+
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_margin="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:textSize="20.0sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="there are no feed items\n pull to refresh or\ncreate a palce or event"/>
+    </LinearLayout>
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/livefeed_RecyclerView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:paddingTop="?attr/actionBarSize"-->
+        <!--android:paddingBottom="@dimen/dimen_48"-->
+        <!--android:clipChildren="false"-->
+        <!--android:clipToPadding="false"-->
+        <!--android:background="@color/color_Onyx"/>-->
+    <com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager
+        android:id="@+id/livefeed_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:paddingTop="?attr/actionBarSize"
+        android:paddingBottom="@dimen/dimen_48"
+        android:background="@color/color_Onyx"/>
+
+    <include layout="@layout/layout_toolbar" />
+
+</FrameLayout>

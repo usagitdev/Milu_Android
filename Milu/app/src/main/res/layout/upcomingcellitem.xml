@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:fontPath="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/upComingEvent_cell"
+        android:layout_width="fill_parent"
+        android:layout_height="116dp"
+        android:scaleType="centerCrop"/>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="116dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/upComingEvent_gradient"
+                android:layout_width="fill_parent"
+                android:layout_height="116dp"
+                android:background="@drawable/cellgradient2"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:layout_marginStart="4dp">
+
+                    <charles.com.milu.CustomViews.RegularTitleTextView
+                        android:id="@+id/upComingEvent_name"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:text="juan burns"
+                        android:layout_marginBottom="-3dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/upComingEvent_likes"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:text="2K people"
+                        android:textSize="18sp"
+                        android:textColor="@color/Munsell"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="57dp"
+                    android:background="@drawable/event_list_upcoming_bell_icon"/>
+
+                <charles.com.milu.CustomViews.RegularTitleTextView
+                    android:id="@+id/upComingEvent_ranking"
+                    android:layout_width="32dp"
+                    android:layout_height="21dp"
+                    android:text="5.0"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

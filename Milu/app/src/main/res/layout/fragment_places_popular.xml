@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bb_darkBackgroundColor">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/newEvent_MainLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:paddingTop="?attr/actionBarSize"
+                android:paddingBottom="44dp"
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false"/>
+            <include layout="@layout/layout_toolbar"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/newEvent_Filterlayout"
+            android:layout_width="288dp"
+            android:layout_marginLeft="-0.5dp"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:paddingLeft="23dp"
+                android:id="@+id/newEvent_FilterTitleBar">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/newEvent_ftitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="filter"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/Deepsky"
+                    android:textSize="20sp"/>
+
+                <ImageView
+                    android:id="@+id/newEvent_filter_closeicon"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/nav_bar_cancel_icon"
+                    android:layout_alignParentEnd="true"/>
+
+                <ImageView
+                    android:id="@+id/newEvent_filter_closebtn"
+                    android:layout_centerVertical="true"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:id="@+id/newEvent_filterscrollview"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/newEvent_FilterTitleBar"
+                android:clickable="true"
+                android:layout_height="wrap_content"
+                android:focusable="true">
+
+                <RelativeLayout
+                    android:id="@+id/newEvent_blurlayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/newEvent_gather_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/newEvent_GatherImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/contacts_list_section_header"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_gather_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GATHRERINGS"
+                            android:textColor="@color/color_DimGray"
+                            android:textSize="10sp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_centerVertical="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/newEvent_events_layout"
+                        android:layout_below="@+id/newEvent_gather_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="15dp">
+
+                        <ImageView
+                            android:layout_marginStart="23dp"
+                            android:id="@+id/newEvent_calicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:src="@drawable/filter_calendar_icon"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_event_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Lavender_Gray"
+                            android:text="events"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/newEvent_calicon"
+                            android:layout_marginStart="20dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/path_3"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginStart="55dp"
+                            android:layout_below="@+id/newEvent_calicon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@+id/newEvent_events_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/newEvent_meetup_layout"
+                        android:paddingTop="15dp">
+
+                        <ImageView
+                            android:id="@+id/newEvent_meetupicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/filter_meetup_icon"
+                            android:layout_marginStart="23dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_meetup_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="meetups"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toEndOf="@+id/newEvent_meetupicon"
+                            android:layout_marginStart="20dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/path_3"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_meetupicon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/newEvent_distance_layout"
+                        android:layout_below="@+id/newEvent_meetup_layout"
+                        android:paddingTop="15dp">
+
+                        <ImageView
+                            android:id="@+id/newEvent_distanceicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/filter_radius_icon"
+                            android:layout_marginLeft="23dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_distance_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="distance"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toEndOf="@+id/newEvent_distanceicon"
+                            android:layout_marginStart="20dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/filter_infinity_sign" />
+
+                        <SeekBar
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="11dp"
+                            android:id="@+id/newEvent_distance_seekbar"
+                            android:layout_below="@+id/newEvent_distanceicon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/newEvent_sort_layout"
+                        android:layout_below="@+id/newEvent_distance_layout">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/contacts_list_section_header"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_sort_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SORT BY"
+                            android:textColor="@color/color_DimGray"
+                            android:textSize="10sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="11dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/newEvent_start_layout"
+                        android:paddingTop="14dp"
+                        android:layout_below="@+id/newEvent_sort_layout">
+
+
+                        <ImageView
+                            android:id="@+id/newEvent_starticon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/filter_clock_icon"
+                            android:layout_marginLeft="21dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_start_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="start time"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_starticon"
+                            android:layout_marginLeft="26dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="16dp"
+                            android:src="@drawable/path_3" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_starticon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/newEvent_likes_layout"
+                        android:layout_below="@+id/newEvent_start_layout">
+
+
+                        <ImageView
+                            android:id="@+id/newEvent_likeicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/filter_likes_icon"
+                            android:layout_marginLeft="20dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_liketitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="likes"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_likeicon"
+                            android:layout_marginLeft="26dp"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_likeicon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/newEvent_upvote_layout"
+                        android:layout_below="@+id/newEvent_likes_layout">
+
+
+                        <ImageView
+                            android:id="@+id/newEvent_upvoteicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/filter_feed_icon1"
+                            android:layout_marginLeft="25dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_upvotetitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="upvotes"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_upvoteicon"
+                            android:layout_marginLeft="31dp"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_upvoteicon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/newEvent_interests_layout"
+                        android:layout_below="@+id/newEvent_upvote_layout">
+
+                        <ImageView
+                            android:id="@+id/newEvent_interesticon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/filter_radius_icon"
+                            android:layout_marginLeft="20dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_interest_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="interests"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_interesticon"
+                            android:layout_marginLeft="24.5dp"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_interesticon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/newEvent_gender_layout"
+                        android:layout_below="@+id/newEvent_interests_layout">
+
+                        <ImageView
+                            android:id="@+id/newEvent_gendericon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/event_page_gender_icon"
+                            android:layout_marginLeft="18dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_gendertitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="gender ratio"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_gendericon"
+                            android:layout_marginLeft="16.5dp"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_gendericon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/newEvent_average_layout"
+                        android:layout_below="@+id/newEvent_gender_layout">
+
+
+                        <ImageView
+                            android:id="@+id/newEvent_averageicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/event_page_cake_icon"
+                            android:layout_marginLeft="21dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_averagetitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="average age"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_averageicon"
+                            android:layout_marginLeft="26dp"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_averageicon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/newEvent_friend_layout"
+                        android:layout_below="@+id/newEvent_average_layout">
+
+
+                        <ImageView
+                            android:id="@+id/newEvent_friendicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/filter_friend_icon"
+                            android:layout_marginLeft="21dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_friendtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="friend count"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_friendicon"
+                            android:layout_marginLeft="27dp"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_friendicon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/newEvent_people_layout"
+                        android:layout_below="@+id/newEvent_friend_layout">
+
+
+                        <ImageView
+                            android:id="@+id/newEvent_peopleicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/mingle_common_friends_icon"
+                            android:layout_marginLeft="21dp"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/newEvent_peopletitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="people count"
+                            android:textSize="16sp"
+                            android:textColor="@color/Lavender_Gray"
+                            android:layout_toRightOf="@+id/newEvent_peopleicon"
+                            android:layout_marginLeft="26dp"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_OuterSpace"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_below="@+id/newEvent_peopleicon"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

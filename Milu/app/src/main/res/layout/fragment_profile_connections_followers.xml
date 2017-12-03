@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:radius="24"
+        android:src="@drawable/user01"/>
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/following_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="112dp"
+        android:paddingBottom="44dp"
+        android:clipToPadding="false"
+        android:clipChildren="false"/>
+
+    <com.ehamutcu.sectionpicker.SectionPicker
+        android:background="@drawable/section_picker_bg"
+        android:id="@+id/following_sectionPicker"
+        android:layout_width="16dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="128dp"
+        android:layout_marginBottom="60dp"
+        android:paddingTop="@dimen/dimen_08"
+        android:paddingBottom="@dimen/dimen_08"
+        app:chosenColor="@color/color_DimGray"
+        app:chosenStyle="bold"
+        app:textColor="@color/white"
+        app:textSize="12sp"/>
+
+
+</RelativeLayout>

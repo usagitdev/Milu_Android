@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LiveEvents.LiveMediaPost_Photo.LiveMediaPost_PhotoFragment">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/LiveMedia_PhotoRecordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/camera_stop_recording_icon"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/LiveMedia_CameraSwitchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/camera_flip_icon"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

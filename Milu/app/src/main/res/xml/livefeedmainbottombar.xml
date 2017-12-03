@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/livefeedtab_live"
+        title = "Live"
+        barColorWhenSelected="#00000000"
+        badgeHidesWhenActive="true"
+        badgeBackgroundColor="#00000000"/>
+    <tab
+        id="@+id/livefeedtab_mingle"
+        title = "MINGLE"
+        textSize = "14sp"
+        barColorWhenSelected="#00000000"
+        badgeHidesWhenActive="true"
+        badgeBackgroundColor="#00000000"/>
+    <tab
+        id = "@+id/livefeedtab_chatting"
+        title="CHAT"
+        barColorWhenSelected="#00000000"
+        badgeHidesWhenActive="true"
+        badgeBackgroundColor="#00000000"/>
+</tabs>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="bottom"
+    android:gravity="bottom">
+
+    <me.himanshusoni.chatmessageview.ChatMessageView
+        app:cmv_cornerRadius="@dimen/dimen_08"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cmv_backgroundColor="#8C121314"
+        app:cmv_showArrow="false"
+        android:layout_marginStart="@dimen/dimen_36"
+        android:layout_marginEnd="@dimen/dimen_52"
+        app:cmv_arrowMargin="0dp"
+        android:gravity="end"
+        android:layout_above="@+id/bottom_view">
+
+        <charles.com.milu.CustomViews.TitleTextView
+            android:id="@+id/txt_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14.0sp"
+            android:textColor="@color/white"
+            android:text="Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queeq."/>
+    </me.himanshusoni.chatmessageview.ChatMessageView>
+
+
+    <RelativeLayout
+        android:id="@+id/video_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_36"
+        android:layout_marginEnd="@dimen/dimen_52"
+        android:layout_above="@+id/bottom_view">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:src="@drawable/event15"
+            app:riv_corner_radius="@dimen/dimen_08"
+            android:id="@+id/chat_message_image"
+            android:layout_marginStart="6dp"
+            android:scaleType="centerCrop"/>
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/video_content_text"
+            android:gravity="bottom"
+            android:padding="6dp"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/white"
+            android:text="This is How it Looks Like When You Send a Link to Somone - The Title of Some Article"
+            android:layout_alignBottom="@+id/chat_image_view"/>
+    </RelativeLayout>
+
+    <charles.com.milu.Utility.SquareImageView
+        android:layout_width="24.0dp"
+        android:layout_height="24.0dp"
+        android:id="@+id/user_avatar"
+        android:src="@drawable/user01"
+        android:layout_above="@+id/bottom_view"/>
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="8.0dp"/>
+</RelativeLayout>

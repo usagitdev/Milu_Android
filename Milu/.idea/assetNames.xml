@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="assetNames">
+    <option name="mapping">
+      <map>
+        <entry key="event_list_upcoming_bell_icon" value="event_list_upcoming_bell_white_icon" />
+        <entry key="tab_bar_user_icon_off" value="tab_bar_user_icon_on" />
+      </map>
+    </option>
+  </component>
+</project>

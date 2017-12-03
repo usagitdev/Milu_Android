@@ -1,0 +1,1055 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/fragment_container"
+    android:background="@color/bb_darkBackgroundColor">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_marginTop="@dimen/dimen_56"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/onGoingHost_ScrollView"
+        android:paddingBottom="48dp"
+        android:clipToPadding="false"
+        android:clipChildren="false">
+
+        <RelativeLayout
+            android:background="@color/color_MediumJungleGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:id="@+id/onGoingHost_eventImage"
+                android:background="@drawable/sports_fitness"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:onClick="onClickFeedImage"
+                android:focusable="true" />
+
+            <ImageButton
+                android:id="@+id/liveEventButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/events_page_live_events_button"
+                android:layout_marginTop="134dp"
+                android:layout_marginEnd="@dimen/dimen_08"
+                android:background="@color/transparent"
+                android:layout_alignParentEnd="true"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="87dp"
+                android:layout_below="@+id/onGoingHost_eventImage"
+                android:id="@+id/onGoingHost_DetailLayout">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="86dp"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/onGoingHost_TimeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventDate"
+                            android:layout_width="44dp"
+                            android:layout_height="42dp"
+                            android:text = "03"
+                            android:textColor="@color/Deepsky"
+                            android:layout_gravity="center"
+                            android:textSize="36sp"
+                            android:textAlignment="center"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventDateLabel"
+                            android:layout_width="11dp"
+                            android:layout_height="16dp"
+                            android:text = "D"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/color_Oldlavender"
+                            android:layout_gravity="top"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="-2dp"
+                            android:textAlignment="center"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventHour"
+                            android:layout_width="44dp"
+                            android:layout_height="42dp"
+                            android:text = "22"
+                            android:textColor="@color/Deepsky"
+                            android:layout_gravity="center"
+                            android:textSize="36sp"
+                            android:textAlignment="center"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventHourLabel"
+                            android:layout_width="11dp"
+                            android:layout_height="16dp"
+                            android:text = "H"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/color_Oldlavender"
+                            android:layout_gravity="top"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="-2dp"
+                            android:textAlignment="center"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventMin"
+                            android:layout_width="44dp"
+                            android:layout_height="42dp"
+                            android:text = "51"
+                            android:textColor="@color/Deepsky"
+                            android:layout_gravity="center"
+                            android:textSize="36sp"
+                            android:textAlignment="center"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventMinLabel"
+                            android:layout_width="11dp"
+                            android:layout_height="16dp"
+                            android:text = "M"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/color_Oldlavender"
+                            android:layout_gravity="top"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="-4dp"
+                            android:textAlignment="center"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventSec"
+                            android:layout_width="44dp"
+                            android:layout_height="42dp"
+                            android:text = "47"
+                            android:textColor="@color/Deepsky"
+                            android:layout_gravity="center"
+                            android:textSize="36sp"
+                            android:textAlignment="center"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_EventSecLabel"
+                            android:layout_width="11dp"
+                            android:layout_height="16dp"
+                            android:text = "S"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/color_Oldlavender"
+                            android:layout_gravity="top"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="-4dp"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+
+                    <charles.com.milu.CustomViews.RegularTitleTextView
+                        android:layout_width="304dp"
+                        android:layout_height="24dp"
+                        android:text="koc university party"
+                        android:id="@+id/umcomingHost_EvnetTitle"
+                        android:layout_gravity="bottom"
+                        android:textSize="20.0sp"
+                        android:textColor="@color/white"
+                        android:gravity="bottom"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/color_DimGray"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:layout_below="@+id/onGoingHost_DetailLayout"
+                android:id="@+id/onGoingHost_GoingLayout">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true">
+
+                        <RelativeLayout
+                            android:id="@+id/onGoingHost_Go_ReLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/onGoingHost_GoingImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentLeft="true"
+                                android:background="@drawable/path2"/>
+                            <android.support.v7.widget.AppCompatSpinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/onGoingHost_goingSpinner"
+                                android:spinnerMode="dropdown"
+                                android:entries="@array/ongoing_array"
+                                android:layout_toEndOf="@+id/onGoingHost_GoingImage"
+                                android:dropDownSelector="@drawable/icon_events_rsvp_down_arrow_icon"/>
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/onGoingHost_GoingTxt"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="going"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:textSize="16sp"-->
+                                <!--android:layout_marginLeft="8dp"-->
+                                <!--android:layout_toRightOf="@+id/onGoingHost_GoingImage"-->
+                                <!--android:textColor="@color/color_OuterSpace"/>-->
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_toRightOf="@+id/onGoingHost_Go_ReLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="33dp"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/onGoingHost_InviteImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentLeft="true"
+                                android:background="@drawable/event_page_invite_icon"/>
+
+                            <TextView
+                                android:id="@+id/onGoingHost_InviteTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="invite"
+                                android:layout_marginLeft="8dp"
+                                android:layout_centerVertical="true"
+                                android:textSize="16sp"
+                                android:textColor="@color/color_OuterSpace"
+                                android:layout_toRightOf="@+id/onGoingHost_InviteImage" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_DimGray"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/onGoingHost_EventAddressLayout"
+                android:layout_below="@+id/onGoingHost_GoingLayout"
+                android:layout_width="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="12dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/onGoingHost_BuyLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/onGoingHost_BuyImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/event_page_ticket_icon"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BUY TICKETS"
+                        android:gravity="top"
+                        android:layout_toEndOf="@+id/onGoingHost_BuyImage"
+                        android:layout_marginStart="12dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/Deepsky"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/onGoingHost_FriLayout"
+                    android:layout_below="@+id/onGoingHost_BuyLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/onGoingHost_CalendarImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/event_page_calendar_icon"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="115dp"
+                        android:layout_height="39dp"
+                        android:text="friday march 17 9:30P-2A"
+                        android:gravity="top"
+                        android:layout_toEndOf="@+id/onGoingHost_CalendarImage"
+                        android:layout_marginStart="12dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/event_page_lock_open"
+                        android:layout_alignParentRight="true"/>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_below="@+id/onGoingHost_FriLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentBottom="true">
+
+                    <ImageView
+                        android:id="@+id/onGoingHost_DropPinImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/event_page_drop_pin_icon"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="203dp"
+                        android:layout_height="39dp"
+                        android:text="1372 kreiger plaza suite 721 san francisco, ca"
+                        android:gravity="top"
+                        android:layout_toRightOf="@+id/onGoingHost_DropPinImage"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/event_page_share_icon" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="fill_parent"
+                android:id="@+id/onGoingHost_MapLayout"
+                android:layout_below="@+id/onGoingHost_EventAddressLayout"
+                android:background="@color/accent"
+                android:layout_height="120dp">
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/onGoingHost_Map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="7dp"
+                android:id="@+id/onGoingHost_ResumeLayout"
+                android:layout_below="@+id/onGoingHost_MapLayout">
+
+                <RelativeLayout
+                    android:id="@+id/onGoingHost_RatLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_StarImage"
+                        android:background="@drawable/event_page_rating_star_icon"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.8/5 based on 6 ratings"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/onGoingHost_RatingTxt"
+                        android:layout_toRightOf="@+id/onGoingHost_StarImage"
+                        android:layout_marginLeft="12dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/onGoingHost_MenLayout"
+                    android:layout_below="@+id/onGoingHost_RatLayout"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_GenderImage"
+                        android:background="@drawable/event_page_gender_icon"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="151 men 200 women 13 other"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:id="@+id/onGoingHost_GenterText"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/onGoingHost_GenderImage"
+                        android:layout_marginLeft="12dp"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/onGoingHost_CakeLayout"
+                    android:layout_below="@+id/onGoingHost_MenLayout"
+                    android:layout_marginTop="12dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_CakeImage"
+                        android:background="@drawable/event_page_cake_icon"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23 is the average age here"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:id="@+id/onGoingHost_CakeText"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/onGoingHost_CakeImage"
+                        android:layout_marginLeft="12dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/onGoingHost_HostedLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/onGoingHost_CakeLayout"
+                    android:layout_marginTop="12dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_UserImage"
+                        android:background="@drawable/event_page_user_icon"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="145dp"
+                        android:layout_height="20dp"
+                        android:text="hosted by john doe"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:layout_toRightOf="@+id/onGoingHost_UserImage"
+                        android:layout_marginLeft="12dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/settings_next_icon3"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp"
+                    android:layout_below="@+id/onGoingHost_HostedLayout">
+
+                    <ImageView
+                        android:id="@+id/onGoingHost_DescriptIcon"
+                        android:background="@drawable/event_page_description_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_toRightOf="@+id/onGoingHost_DescriptIcon"
+                        android:id="@+id/onGoingHost_DescriptionTxt"
+                        android:layout_width="289dp"
+                        android:layout_height="175dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/upcomingHost_DescriptionTxt"
+                        android:layout_marginLeft="14dp"/>
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_DimGray"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="114dp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                android:layout_below="@+id/onGoingHost_ResumeLayout"
+                android:id="@+id/onGoingHost_PeopleLayout">
+
+                <charles.com.milu.CustomViews.RegularTitleTextView
+                    android:id="@+id/onGoingHost_PeoPleTxt"
+                    android:layout_width="132dp"
+                    android:layout_height="19dp"
+                    android:text="114 people going"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="fill_parent"
+                    android:layout_height="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/onGoingHost_PeopleRecyclerView"
+                    android:layout_below="@+id/onGoingHost_PeoPleTxt"
+                    android:layout_marginTop="8dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <LinearLayout
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/onGoingHost_PeopleRecyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/onGoingHost_ShareIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/feed_share_icon"
+                        android:layout_alignParentLeft="true"
+                        />
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/onGoingHost_InviteTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INVITE PEOPLE"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="16dp"
+                        android:textColor="@color/Deepsky"
+                        android:layout_gravity="center_vertical"
+                        android:layout_alignParentRight="true"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/color_DimGray"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="115dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:layout_below="@+id/onGoingHost_PeopleLayout"
+                android:id="@+id/onGoingHost_LikeLayout">
+
+                <charles.com.milu.CustomViews.RegularTitleTextView
+                    android:id="@+id/onGoingHost_LikeTitle"
+                    android:text="256 people like this"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp"
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="fill_parent"
+                    android:layout_height="25dp"
+                    android:id="@+id/onGoingHost_LikeRecyclerView"
+                    android:layout_below="@+id/onGoingHost_LikeTitle"
+                    android:layout_marginTop="9dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:layout_width="172dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/onGoingHost_LikeRecyclerView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:id="@+id/onGoingHost_LikeIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/feed_like_icon"
+                        android:layout_alignParentLeft="true"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_LikeTxt"
+                        android:text="LIKE THIS EVENT"
+                        android:textSize="16sp"
+                        android:textColor="@color/Deepsky"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/color_DimGray"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/onGoingHost_CommentLayout"
+                android:paddingTop="8dp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:layout_below="@+id/onGoingHost_LikeLayout">
+
+                <charles.com.milu.CustomViews.RegularTitleTextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/onGoingHost_CommentsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26 commnets"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/onGoingHost_CommentsTitle"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:id="@+id/onGoingHost_CommentRecyclerView">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_below="@+id/onGoingHost_CommentRecyclerView">
+
+                    <ImageView
+                        android:id="@+id/onGoingHost_CommentIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/feed_comment_icon"
+                        android:layout_alignParentLeft="true"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:id="@+id/onGoingHost_CommentTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="COMMENT"
+                        android:textColor="@color/Deepsky"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_DimGray"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@+id/onGoingHost_CommentLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:id="@+id/onGoingHost_InterestsLayout">
+
+                <charles.com.milu.CustomViews.RegularTitleTextView
+                    android:id="@+id/onGoingHost_InterestTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="interests"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"/>
+
+                <LinearLayout
+                    android:layout_below="@+id/onGoingHost_InterestTitle"
+                    android:id="@+id/onGoingHost_In_Gra_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_InternetTxt"
+                        android:text="internet of things"
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/button_bordered_white"
+                        android:textSize="17sp"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_GraphicsTxt"
+                        android:text="internet of things"
+                        android:textColor="@color/color_Milumain"
+                        android:layout_marginLeft="12dp"
+                        android:background="@drawable/button_bordered_blue"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_below="@+id/onGoingHost_In_Gra_Layout"
+                    android:id="@+id/onGoingHost_New_Cry_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_NewTxt"
+                        android:text="new technology"
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/button_bordered_white"
+                        android:textSize="17sp"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_CryTxt"
+                        android:text="cryptocurrency"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="12dp"
+                        android:background="@drawable/button_bordered_white"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_below="@+id/onGoingHost_New_Cry_Layout"
+                    android:id="@+id/onGoingHost_Com_Uni_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_ComTxt"
+                        android:text="comoputer programming"
+                        android:textColor="@color/color_Milumain"
+                        android:background="@drawable/button_bordered_blue"
+                        android:textSize="17sp"/>
+
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/onGoingHost_UniTxt"
+                        android:text="unity"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="12dp"
+                        android:background="@drawable/button_bordered_white"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_DimGray"
+                    android:layout_below="@+id/onGoingHost_Com_Uni_Layout"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/onGoingHostt_MoreLayout"
+                android:layout_below="@+id/onGoingHost_InterestsLayout"
+                android:layout_width="match_parent"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+
+                <charles.com.milu.CustomViews.RegularTitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="more from this host"
+                    android:id="@+id/onGoingHost_MoreTitle"
+                    android:textColor="@color/color_Platinum"
+                    android:textSize="16sp"/>
+
+                <RelativeLayout
+                    android:layout_below="@+id/onGoingHost_MoreTitle"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/onGoingHost_25Layout">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/onGoingHost_Apr25Layout">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_APR1Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="APR"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorWhite"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="25"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="23sp"
+                            android:layout_marginTop="-7dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingRight="16dp"
+                        android:id="@+id/uonGoingHost_APR25TxtLayout"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/onGoingHost_Apr25Layout">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Deepsky"
+                            android:textSize="16sp"
+                            android:id="@+id/onGoingHost_APR25_DesTxt"
+                            android:text="@string/upcomingHost_APR25Txt"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_APR25_DateTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aprilil 25 6:00PM upscale restaurant * 2854 e rit"
+                            android:layout_marginTop="1dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorWhite"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/onGoingHost_25Layout"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/onGoingHost_27Layout">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/onGoingHostApr27Layout">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_Apr2Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="APR"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorWhite"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHost_27Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="27"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="23sp"
+                            android:layout_marginTop="-7dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingRight="16dp"
+                        android:id="@+id/onGoingHostt_APR27TxtLayout"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/onGoingHostApr27Layout">
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_Milumain"
+                            android:textSize="16sp"
+                            android:id="@+id/onGoingHost_APR27_DesTxt"
+                            android:text="@string/upcomingHost_APR27Txt"/>
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/onGoingHostst_APR27_DateTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aprilil 25 6:00PM upscale restaurant * 2854 e rit"
+                            android:layout_marginTop="1dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorWhite"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/onGoingHost_TitleBar"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="56dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@color/transparent"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/onGoingHost_backicon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:background="@drawable/nav_bar_back_icon"-->
+            <!--android:layout_marginLeft="20dp"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/onGoingHost_backbutton"-->
+            <!--android:layout_width="56dp"-->
+            <!--android:layout_height="56dp"-->
+            <!--android:layout_centerVertical="true"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/onGoingHost_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="events"-->
+            <!--android:layout_toRightOf="@+id/onGoingHost_backicon"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="40dp"-->
+            <!--android:textColor="@color/color_Milumain"-->
+            <!--android:textSize="@dimen/dimenFont_20"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/onGoingHost_Settingicon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/nav_bar_setting_icon"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="15dp"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/onGoingHost_Shareicon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/nav_bar_share_icon"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_toLeftOf="@+id/onGoingHost_Settingicon"-->
+            <!--android:layout_marginRight="@dimen/dimenMargin_15"/>-->
+
+
+    <!--</RelativeLayout>-->
+
+</FrameLayout>

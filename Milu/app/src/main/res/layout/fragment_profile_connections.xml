@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bb_darkBackgroundColor">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager
+            android:id="@+id/profileConnectionPager"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+        </charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager>
+
+        <LinearLayout
+            android:id="@+id/profile_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dimen_56"
+            android:layout_marginTop="@dimen/dimen_56"
+            android:background="@drawable/app_bar_bg_vd"
+            android:orientation="horizontal">
+
+            <charles.com.milu.CustomViews.TabTitleTextView
+                android:id="@+id/tab_btn_following"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:title="following"
+                app:subtitle="256"/>
+            <charles.com.milu.CustomViews.TabTitleTextView
+                android:id="@+id/tab_btn_followers"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:title="followers"
+                app:subtitle="256"/>
+            <charles.com.milu.CustomViews.TabTitleTextView
+                android:id="@+id/tab_btn_groups"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:title="groups"
+                app:subtitle="256"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!--<charles.com.milu.utils.expandableselector.ExpandableSelector-->
+        <!--android:id="@+id/menu_selector"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="end|bottom"-->
+        <!--android:paddingBottom="@dimen/dimen_16"-->
+        <!--android:layout_marginBottom="@dimen/dimen_56">-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/btn_floating_menu"-->
+            <!--android:background="@drawable/menu_button"-->
+            <!--style="@style/ExpandableItemStyleHeader"/>-->
+
+    <!--</charles.com.milu.utils.expandableselector.ExpandableSelector>-->
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_close_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/group_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_group_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/chat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_chat_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/remove_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_unfollow_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+
+    <ImageButton
+        android:id="@+id/menu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_button"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="visible"/>
+    <!--<com.github.clans.fab.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|right"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:src="@drawable/menu_button"-->
+        <!--fab:fab_colorNormal="@color/app_primary"-->
+        <!--fab:fab_colorPressed="@color/app_primary_pressed"-->
+        <!--fab:fab_colorRipple="@color/app_ripple"/>-->
+
+</FrameLayout>

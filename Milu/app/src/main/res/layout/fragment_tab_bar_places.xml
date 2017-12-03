@@ -1,0 +1,301 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/eventDashLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="44dp">
+
+
+        <RelativeLayout
+            android:id="@+id/firstView"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:weightSum="40">
+                <LinearLayout
+                    android:id="@+id/eventDash_mycaView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="10"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <!--  live event tile -->
+
+                    <RelativeLayout
+                        android:id="@+id/rl_liveplaces"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/eventdash_live_event_gradient"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:background="@drawable/icon_events_streaming_live" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.7"
+                            android:text="live places"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <!-- canendar tile -->
+                    <RelativeLayout
+                        android:id="@+id/rl_nearby"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/eventdash_live_event_gradient"
+                        android:clickable="true">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/locations_dashboard_nearby_icon" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.6"
+                            android:text="nearby"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_myplaces"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/places_gradient"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:background="@drawable/events_dashboard_user_icon" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:alpha="0.6"
+                            android:text="my places"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/eventDash_livehotView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="18">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_txt_direction"
+                        android:layout_width="match_parent"
+                        android:layout_height="80.0dp"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="horizontal"
+                        android:background="@color/color_Onyx">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/locations_dashboard_car_icon"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/dimen_08"/>
+
+                        <View
+                            android:layout_width="1.0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:layout_margin="@dimen/dimen_08"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/dimen_08">
+
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:textSize="16.0sp"
+                                android:text="cafe latte"/>
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:textSize="16.0sp"
+                                android:text="9 friends"/>
+                            <charles.com.milu.CustomViews.TitleTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:textSize="16.0sp"
+                                android:text="2.6mi away * 7min"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventDash_meinView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="12"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_popular_places"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:background="@drawable/food"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/cellgradient2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="4dp"
+                            android:text="popular \nplaces"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/txt_popular_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:gravity="end"
+                            android:text="2K"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="36sp" />
+
+                    </RelativeLayout>
+
+                    <!-- invitaiton  tile -->
+
+                    <RelativeLayout
+                        android:id="@+id/rl_favorite_places"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/favouriteback"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/cellgradient2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="5dp"
+                            android:text="favorite \nplaces"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp" />
+
+                        <charles.com.milu.CustomViews.TitleTextView
+                            android:id="@+id/txt_favorite_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:gravity="end"
+                            android:text="07"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="36sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

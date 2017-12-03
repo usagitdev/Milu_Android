@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:gravity="fill"
+        >
+
+        <com.jgabrielfreitas.core.BlurImageView
+            android:id="@+id/blurred_background_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:radius="24"
+            android:src="@drawable/user01"/>
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="112dp"
+        android:paddingBottom="44dp"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/friends_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topPanel"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="@dimen/dimen_12"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="friends"/>
+
+                <GridView
+                    android:id="@+id/grid_friends"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/family_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/friends_panel"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_12"
+                    android:text="family"/>
+
+                <GridView
+                    android:id="@+id/grid_family"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fraternity_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/family_panel"
+                android:orientation="vertical">
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="@dimen/dimen_12"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="fraternity"/>
+
+                <GridView
+                    android:id="@+id/grid_fraternity"
+                    android:layout_width="match_parent"
+                    style="@style/PhotoGridLayout"
+                    android:layout_height="@dimen/dimen_121"
+                    android:numColumns="6"
+                    android:stretchMode="columnWidth"
+                    />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

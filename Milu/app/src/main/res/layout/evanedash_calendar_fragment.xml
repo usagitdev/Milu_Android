@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/calMain_Layout"
+    android:orientation="vertical"
+    android:background="@color/bb_darkBackgroundColor">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/calCollectionView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/calCollection_RecyclerView"
+                android:paddingTop="@dimen/dimen_56"
+                android:paddingBottom="44dp"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/calListView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="408"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dimen_56">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="291"
+                android:orientation="vertical">
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                    android:id="@+id/calendarView"
+                    android:background="@drawable/places_gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:mcv_showOtherDates="all"
+                    app:mcv_selectionColor="#00F"
+                    app:mcv_tileHeight="0dp" />
+
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:id="@+id/textView"
+                    android:layout_margin="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="117"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/calEvent_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingBottom="44dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/calAdd_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/add_button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="@dimen/dimen_56"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/newEvent_RecyclerView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+</RelativeLayout>

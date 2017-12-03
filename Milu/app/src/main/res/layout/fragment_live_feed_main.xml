@@ -1,0 +1,44 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:background="@color/color_Onyx"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:paddingBottom="44dp">
+
+        <charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager
+            android:id="@+id/liveFeedMainPageContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:paddingTop="48dp"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+        </charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager>
+
+        <com.gigamole.navigationtabstrip.NavigationTabStrip
+            android:id="@+id/liveFeedMainPage_MainTabbar"
+            android:layout_width="match_parent"
+            android:layout_height="48.0dp"
+            app:nts_active_color="@color/colorWhite"
+            app:nts_color="#42a4d1"
+            app:nts_corners_radius="1dp"
+            app:nts_inactive_color="@color/color_TabColor"
+            app:nts_size="15sp"
+            app:nts_gravity="bottom"
+            app:nts_weight="3dp"/>
+
+    </RelativeLayout>
+    <include layout="@layout/layout_toolbar"/>
+
+</FrameLayout>

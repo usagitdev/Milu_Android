@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="48dp"
+        android:weightSum="1">
+
+        <charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager
+            android:id="@+id/contanerBar"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+            <FrameLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:id="@+id/frame_container"
+                />
+        </charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible">
+
+        <com.sutanu.blureffectview.BlurEffectView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            app:blurEffectViewRadius="1dp"
+            android:layout_centerInParent="true"
+            app:blurEffectViewOverlayColor="@color/color_Onyx"
+            android:alpha="0.9"/>
+
+
+        <com.roughike.bottombar.BottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-14dp"
+            app:bb_inActiveTabColor="#00c0ff"
+            app:bb_activeTabColor="#00000000"
+            app:bb_tabXmlResource="@xml/tab_layout" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

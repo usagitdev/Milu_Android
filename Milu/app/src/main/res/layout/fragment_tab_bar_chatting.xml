@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bb_darkBackgroundColor">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager
+            android:id="@+id/chatdashPager"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+        </charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager>
+
+        <LinearLayout
+            android:id="@+id/chat_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/dimen_56"
+            android:background="@drawable/nav_bar_vd"
+            android:orientation="horizontal">
+
+            <charles.com.milu.CustomViews.ChatTabTitleTextView
+                android:id="@+id/tab_btn_chat"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:title="chat"/>
+            <charles.com.milu.CustomViews.ChatTabTitleTextView
+                android:id="@+id/tab_btn_mingle"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:title="mingle"/>
+            <charles.com.milu.CustomViews.ChatTabTitleTextView
+                android:id="@+id/tab_btn_discover"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:title="discover"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <include layout="@layout/layout_toolbar"/>
+
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_close_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/group_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_group_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/chat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_chat_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/remove_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contacts_unfollow_button"
+        android:layout_marginEnd="@dimen/dimen_08"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"/>
+
+
+    <ImageButton
+        android:id="@+id/plus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/plus_button"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="visible"/>
+
+</FrameLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="tab_drawables">
+        <item>@drawable/tab_feed_src</item>
+        <item>@drawable/tab_event_src</item>
+        <item>@drawable/tab_chat_src</item>
+        <item>@drawable/tab_place_src</item>
+        <item>@drawable/tab_user_src</item>
+    </integer-array>
+
+    <string-array name="tab_titles">
+        <item>milu</item>
+        <item>milu</item>
+        <item>milu</item>
+        <item>milu</item>
+        <item>milu</item>
+    </string-array>
+
+    <string-array name="image_following_ids">
+        <item>@drawable/follower01</item>
+        <item>@drawable/follower02</item>
+        <item>@drawable/follower03</item>
+        <item>@drawable/follower04</item>
+        <item>@drawable/follower05</item>
+        <item>@drawable/follower06</item>
+        <item>@drawable/follower07</item>
+        <item>@drawable/follower08</item>
+        <item>@drawable/follower09</item>
+        <item>@drawable/follower10</item>
+        <item>@drawable/follower11</item>
+        <item>@drawable/follower12</item>
+    </string-array>
+
+    <string-array name="image_user_ids">
+        <item>@drawable/user01</item>
+        <item>@drawable/user02</item>
+        <item>@drawable/user03</item>
+        <item>@drawable/user04</item>
+        <item>@drawable/user05</item>
+        <item>@drawable/user06</item>
+        <item>@drawable/user07</item>
+        <item>@drawable/user08</item>
+        <item>@drawable/user09</item>
+    </string-array>
+    <string-array name="ongoing_array">
+        <item>going</item>
+        <item>nogoing</item>
+        <item>going</item>
+        <item>going</item>
+        <item>going</item>
+    </string-array>
+
+</resources>

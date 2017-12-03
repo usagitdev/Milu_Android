@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="80.0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:radius="10"
+        android:background="@drawable/neweventback00"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_Onyx"
+        android:alpha="0.3"/>
+
+    <ImageView
+        android:id="@+id/imv_match_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:src="@drawable/chat_notification_mingle_match_icon"
+        android:layout_centerVertical="true"/>
+
+    <charles.com.milu.CustomViews.RegularTitleTextView
+        android:id="@+id/chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:30P"
+        android:textSize="12.0sp"
+        android:layout_marginStart="@dimen/dimen_60"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true"/>
+
+    <LinearLayout
+        android:id="@+id/view_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <charles.com.milu.Utility.SquareImageView
+                android:id="@+id/user_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/user01"
+                android:layout_marginStart="@dimen/dimen_08"
+                />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/user_badge"
+                android:layout_width="@dimen/dimen_16"
+                android:layout_height="@dimen/dimen_16"
+                app:cardCornerRadius="@dimen/dimen_08"
+                app:cardBackgroundColor="@color/color_Milumain"
+                app:cardElevation="2dp">
+                <charles.com.milu.CustomViews.RegularTitleTextView
+                    android:id="@+id/txt_badge"
+                    android:layout_width="@dimen/dimen_16"
+                    android:layout_height="@dimen/dimen_16"
+                    android:text="2"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12.0sp"/>
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            >
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/icon_online"
+                android:layout_width="@dimen/dimen_04"
+                android:layout_height="@dimen/dimen_04"
+                app:cardCornerRadius="@dimen/dimen_04"
+                app:cardBackgroundColor="@color/color_Milumain"
+                app:cardElevation="1dp"/>
+            <charles.com.milu.CustomViews.RegularTitleTextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="nancy"
+                android:layout_marginStart="@dimen/dimen_04"
+                android:textSize="12.0sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <charles.com.milu.CustomViews.RegularTitleTextView
+        android:id="@+id/txt_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12.0sp"
+        android:layout_toRightOf="@+id/view_user"
+        android:layout_marginStart="@dimen/dimen_20"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:text="there is no cure for curisoity"/>
+
+</RelativeLayout>

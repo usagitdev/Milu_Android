@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:picker="http://schemas.android.com/tools"
+    android:background="@color/color_MediumJungleGreen"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager
+        android:id="@+id/liveMediapostMainContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager>
+
+    <RelativeLayout
+        android:id="@+id/liveFeedMedia_TitleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dimen_56"
+        android:paddingRight="18dp"
+        android:paddingLeft="18dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/nav_bar_cancel_icon"/>
+
+        <ImageView
+            android:id="@+id/liveMediaPost_BackButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"/>
+
+        <com.wefika.horizontalpicker.HorizontalPicker
+            android:id="@+id/liveMediaPost_Hpicker"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="2"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp"
+            app:dividerSize="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/liveMediaPost_BackButton"
+            android:layout_toLeftOf="@+id/liveMediaPost_CheckButton"
+            app:sideItems="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/path_3"/>
+
+        <ImageView
+            android:id="@+id/liveMediaPost_CheckButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_liveFeed"
+        icon = "@drawable/tab_bar_feed_icon_off"
+        barColorWhenSelected="#00000000"
+        badgeBackgroundColor="#00000000"
+        badgeHidesWhenActive="true"/>
+    <tab
+        id="@+id/tab_eventDash"
+        icon = "@drawable/calendar_icon"
+        barColorWhenSelected="#00000000"
+        badgeBackgroundColor="#00000000"
+        badgeHidesWhenActive="true"/>
+    <tab
+        id="@+id/tab_chatDash"
+        barColorWhenSelected="#00000000"
+        badgeBackgroundColor="#00000000"
+        icon = "@drawable/tab_bar_messages_icon_off"/>
+    <tab
+        id="@+id/tab_placeDash"
+        barColorWhenSelected="#00000000"
+        badgeBackgroundColor="#00000000"
+        icon = "@drawable/tab_bar_drop_pin_icon_off"/>
+    <tab
+        id="@+id/tab_userProfile"
+        barColorWhenSelected="#00000000"
+        badgeBackgroundColor="#00000000"
+        icon = "@drawable/tab_bar_user_icon_off" />
+</tabs>

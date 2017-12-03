@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_16"
+    android:orientation="vertical"
+    android:background="@color/cardview_dark_background">
+
+    <charles.com.milu.CustomViews.TitleTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="input your interest"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_12"
+        android:inputType="text"
+        android:hint="interest"
+        android:textColorHint="@color/text_grey_light"
+        android:layout_gravity="center_horizontal"
+        />
+
+</LinearLayout>
