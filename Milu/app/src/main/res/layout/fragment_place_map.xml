@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_TitleBar">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.google.android.gms.maps.MapView>
+
+        <include layout="@layout/layout_toolbar"/>
+        <LinearLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/bottom_type_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:background="@drawable/tab_bar_vd"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/handle_vd"
+                        android:background="@color/transparent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dimen_04"/>
+
+                    <charles.com.milu.utils.CustomImageButton
+                        android:id="@+id/media_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/nav_bar_search_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dimen_08"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@string/font_light"
+                        android:hint="search events, locations, and friends"
+                        android:textColor="@color/Lavender_Gray"
+                        android:textSize="16.0sp"
+                        android:padding="@dimen/dimen_08"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/type_text_view"
+                        android:layout_toEndOf="@+id/media_button"
+                        android:layout_toStartOf="@+id/send_message_button"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLength="2000"
+                        android:background="@color/transparent"
+                        android:layout_marginStart="@dimen/dimen_08"
+                        />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <charles.com.milu.utils.CustomImageButton
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/plus_button"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/bottom_bar"
+            />
+        <charles.com.milu.utils.CustomImageButton
+            android:id="@+id/locator_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/map_locate_user_button"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/add_button"/>
+    </RelativeLayout>
+
+
+</FrameLayout>

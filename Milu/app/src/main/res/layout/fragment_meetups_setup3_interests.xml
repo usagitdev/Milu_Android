@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_TitleBar">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_meetup"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <charles.com.milu.CustomViews.TitleTextView
+            android:id="@+id/description_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/pick_some_meetups_that_interest_you"
+            android:layout_marginTop="@dimen/dimen_72"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@+id/description_title"
+            android:id="@+id/meetup_categories_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:paddingBottom="@dimen/dimen_48">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <include
+            layout="@layout/layout_toolbar"/>
+    </RelativeLayout>
+
+
+</FrameLayout>

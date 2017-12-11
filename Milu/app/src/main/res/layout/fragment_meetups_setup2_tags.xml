@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dragAndDrop="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/blurred_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradient_meetup"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dimen_72"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pull_to_search_search_icon"/>
+
+        <charles.com.milu.CustomViews.LightEditText
+            android:id="@+id/edt_tag_search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="search all tags"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:background="@color/transparent"/>
+    </LinearLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="48dp"
+        android:paddingTop="@dimen/dimen_110">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <charles.com.milu.CustomViews.RegularTitleTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16.0sp"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:text="@string/popular_in_tech"/>
+            <co.lujun.androidtagview.TagContainerLayout
+                android:id="@+id/tags_tech_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dimen_16"
+                app:container_background_color="@color/transparent"
+                app:container_border_color="@color/transparent"
+                app:container_border_radius="0dp"
+                app:container_border_width="0dp"
+                app:container_enable_drag="true"
+                app:horizontal_interval="16dp"
+                app:tag_background_color="@color/transparent"
+                app:tag_border_color="@color/color_tag"
+                app:tag_border_width="1dp"
+                app:tag_clickable="true"
+                app:tag_corner_radius="18dp"
+                app:tag_enable_cross="false"
+                app:tag_ripple_duration="100"
+                app:tag_text_color="@color/color_tag"
+                app:tag_text_size="17sp"
+                app:tag_theme="none"
+                app:vertical_interval="10dp" />
+
+            <charles.com.milu.CustomViews.RegularTitleTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:textSize="16.0sp"
+                android:text="@string/popular_in_health_wellness"/>
+            <co.lujun.androidtagview.TagContainerLayout
+                android:id="@+id/tags_health_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dimen_16"
+                app:container_background_color="@color/transparent"
+                app:container_border_color="@color/transparent"
+                app:container_border_radius="0dp"
+                app:container_border_width="0dp"
+                app:container_enable_drag="true"
+                app:horizontal_interval="16dp"
+                app:tag_background_color="@color/transparent"
+                app:tag_border_color="@color/color_tag"
+                app:tag_border_width="1dp"
+                app:tag_clickable="true"
+                app:tag_corner_radius="18dp"
+                app:tag_enable_cross="false"
+                app:tag_ripple_duration="100"
+                app:tag_text_color="@color/color_tag"
+                app:tag_text_size="17sp"
+                app:tag_theme="none"
+                app:vertical_interval="10dp" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/layout_toolbar"/>
+
+</FrameLayout>

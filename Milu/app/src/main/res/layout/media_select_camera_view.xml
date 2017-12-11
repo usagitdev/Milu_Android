@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cameraview"
+    android:layout_width="150dp"
+    android:layout_height="224.0dp">
+
+    <FrameLayout
+        android:id="@+id/camera_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <charles.com.milu.utils.CustomImageButton
+            android:id="@+id/record_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dimen_16"
+            android:layout_alignParentBottom="true"
+            android:onClick="onRecordButtonClicked"
+            android:src="@drawable/chat_add_image_shutter_button_vd"
+            />
+
+        <charles.com.milu.utils.CustomImageButton
+            android:id="@+id/front_back_camera_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:onClick="onSwitchCameraClicked"
+            android:src="@drawable/camera_flip_icon1"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

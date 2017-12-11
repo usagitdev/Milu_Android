@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_TitleBar">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_meetup"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/meetup_search_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/dimen_56"
+            android:paddingBottom="@dimen/dimen_48">
+
+        </android.support.v7.widget.RecyclerView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_56"
+            android:background="@drawable/app_bar_bg_vd">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <charles.com.milu.utils.CustomImageButton
+                android:id="@+id/toolbar_btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:src="@drawable/nav_bar_cancel_icon"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_56">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dropdown_icon"
+                    android:src="@drawable/nav_bar_search_icon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dimen_04"/>
+                <charles.com.milu.CustomViews.LightEditText
+                    android:id="@+id/edt_searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="@dimen/dimen_08"
+                    android:layout_marginStart="@dimen/dimen_08"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/transparent"
+                    android:hint="search cities or zip codes"
+                    android:textColorHint="#88FFFFFF"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</FrameLayout>

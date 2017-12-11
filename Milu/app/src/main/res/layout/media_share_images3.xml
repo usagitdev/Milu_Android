@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/world_feedview"
+    android:orientation="vertical">
+    <charles.com.milu.Utility.SquareLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/event20"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <charles.com.milu.Utility.SquareAvatarImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/event24"
+                android:scaleType="centerCrop"/>
+            <charles.com.milu.Utility.SquareAvatarImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/event23"
+                android:scaleType="centerCrop"/>
+            <charles.com.milu.Utility.SquareAvatarImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/event22"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+
+
+    </charles.com.milu.Utility.SquareLinearLayout>
+
+</RelativeLayout>
