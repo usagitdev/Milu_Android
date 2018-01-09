@@ -2,9 +2,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:id="@+id/fragment_container"
-    android:background="@color/bb_darkBackgroundColor">
+    android:id="@+id/fragment_container">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/gradient_meetup"
+        android:scaleType="centerCrop"/>
     <android.support.v4.widget.NestedScrollView
         android:layout_marginTop="@dimen/dimen_56"
         android:layout_width="match_parent"
@@ -15,7 +19,6 @@
         android:clipChildren="false">
 
         <RelativeLayout
-            android:background="@color/color_MediumJungleGreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -237,19 +240,19 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
                                 android:background="@drawable/event_page_invite_icon"/>
 
-                            <TextView
+                            <charles.com.milu.CustomViews.TitleTextView
                                 android:id="@+id/onGoingHost_InviteTitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="invite"
-                                android:layout_marginLeft="8dp"
+                                android:layout_marginStart="8dp"
                                 android:layout_centerVertical="true"
                                 android:textSize="16sp"
                                 android:textColor="@color/color_OuterSpace"
-                                android:layout_toRightOf="@+id/onGoingHost_InviteImage" />
+                                android:layout_toEndOf="@+id/onGoingHost_InviteImage" />
 
                         </RelativeLayout>
 
@@ -374,7 +377,7 @@
                 android:layout_width="fill_parent"
                 android:id="@+id/onGoingHost_MapLayout"
                 android:layout_below="@+id/onGoingHost_EventAddressLayout"
-                android:background="@color/accent"
+                android:background="@color/colorAccent"
                 android:layout_height="120dp">
 
                 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -551,8 +554,8 @@
 
                 <charles.com.milu.CustomViews.RegularTitleTextView
                     android:id="@+id/onGoingHost_PeoPleTxt"
-                    android:layout_width="132dp"
-                    android:layout_height="19dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="114 people going"
                     android:textColor="@color/colorWhite"
                     android:textSize="16sp"/>
@@ -563,9 +566,18 @@
                     android:orientation="vertical"
                     android:id="@+id/onGoingHost_PeopleRecyclerView"
                     android:layout_below="@+id/onGoingHost_PeoPleTxt"
+                    android:layout_toLeftOf="@+id/next_button_1"
                     android:layout_marginTop="8dp">
 
                 </android.support.v7.widget.RecyclerView>
+                <charles.com.milu.utils.CustomImageButton
+                    android:id="@+id/next_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/settings_next_icon"
+                    android:layout_alignTop="@+id/onGoingHost_PeopleRecyclerView"
+                    android:layout_alignBottom="@+id/onGoingHost_PeopleRecyclerView"
+                    android:layout_alignParentEnd="true"/>
 
                 <LinearLayout
                     android:layout_centerHorizontal="true"
@@ -605,6 +617,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="@color/color_DimGray"/>
 
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -621,8 +634,8 @@
                     android:text="256 people like this"
                     android:textColor="@color/colorWhite"
                     android:textSize="16sp"
-                    android:layout_width="120dp"
-                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     />
 
                 <android.support.v7.widget.RecyclerView
@@ -630,9 +643,19 @@
                     android:layout_height="25dp"
                     android:id="@+id/onGoingHost_LikeRecyclerView"
                     android:layout_below="@+id/onGoingHost_LikeTitle"
+                    android:layout_toLeftOf="@+id/next_button_2"
                     android:layout_marginTop="9dp">
 
                 </android.support.v7.widget.RecyclerView>
+                <charles.com.milu.utils.CustomImageButton
+                    android:id="@+id/next_button_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/settings_next_icon"
+                    android:layout_alignTop="@+id/onGoingHost_LikeRecyclerView"
+                    android:layout_alignBottom="@+id/onGoingHost_LikeRecyclerView"
+                    android:layout_alignParentEnd="true"/>
+
 
                 <RelativeLayout
                     android:layout_width="172dp"
@@ -665,6 +688,7 @@
                     android:layout_height="1dp"
                     android:layout_alignParentBottom="true"
                     android:background="@color/color_DimGray"/>
+
 
             </RelativeLayout>
 
@@ -731,6 +755,13 @@
                     android:layout_height="1dp"
                     android:background="@color/color_DimGray"
                     android:layout_alignParentBottom="true"/>
+
+                <charles.com.milu.utils.CustomImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/settings_next_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
 
             </RelativeLayout>
 
@@ -963,10 +994,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:paddingRight="16dp"
+                        android:paddingEnd="16dp"
                         android:id="@+id/onGoingHostt_APR27TxtLayout"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@+id/onGoingHostApr27Layout">
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/onGoingHostApr27Layout"
+                        android:layout_marginBottom="@dimen/dimen_48">
 
                         <charles.com.milu.CustomViews.TitleTextView
                             android:layout_width="wrap_content"
@@ -995,61 +1027,5 @@
     </android.support.v4.widget.NestedScrollView>
 
     <include layout="@layout/layout_toolbar"/>
-
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/onGoingHost_TitleBar"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="56dp"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:background="@color/transparent"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true">-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/onGoingHost_backicon"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:background="@drawable/nav_bar_back_icon"-->
-            <!--android:layout_marginLeft="20dp"/>-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/onGoingHost_backbutton"-->
-            <!--android:layout_width="56dp"-->
-            <!--android:layout_height="56dp"-->
-            <!--android:layout_centerVertical="true"/>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/onGoingHost_title"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="events"-->
-            <!--android:layout_toRightOf="@+id/onGoingHost_backicon"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginLeft="40dp"-->
-            <!--android:textColor="@color/color_Milumain"-->
-            <!--android:textSize="@dimen/dimenFont_20"/>-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/onGoingHost_Settingicon"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:background="@drawable/nav_bar_setting_icon"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_marginRight="15dp"/>-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/onGoingHost_Shareicon"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:background="@drawable/nav_bar_share_icon"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_toLeftOf="@+id/onGoingHost_Settingicon"-->
-            <!--android:layout_marginRight="@dimen/dimenMargin_15"/>-->
-
-
-    <!--</RelativeLayout>-->
 
 </FrameLayout>

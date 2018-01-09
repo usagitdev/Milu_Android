@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dimen_04">
+    android:layout_marginEnd="@dimen/dimen_04"
+    android:layout_marginStart="@dimen/dimen_04">
 
     <charles.com.milu.Utility.SquareImageView
         android:id="@+id/user_image"

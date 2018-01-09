@@ -8,11 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import charles.com.milu.CustomViews.RegularTitleTextView;
+import charles.com.milu.CustomViews.TitleTextView;
 import charles.com.milu.R;
 
 /**
@@ -21,36 +25,29 @@ import charles.com.milu.R;
 
 public class CalendarEventAdapter extends RecyclerView.Adapter<CalendarEventAdapter.ViewHolder>{
 
-
-    Typeface workSans_Light;
-
-
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public boolean mFlag;
-        public  TextView mEventName;
+        public TitleTextView mEventName;
         public ImageView mEventCell;
         public ImageView mOnline;
-        public ImageView calListCell;
+        public RelativeLayout calListCell;
+        public RegularTitleTextView calTime;
 
         public ViewHolder(View itemView){
 
             super(itemView);
 
-            workSans_Light = Typeface.createFromAsset(mContext.getAssets(),"WorkSans-Light.ttf");
 
-            mEventName = (TextView) itemView.findViewById(R.id.callistcell_eventName);
+            mEventName = (TitleTextView) itemView.findViewById(R.id.callistcell_eventName);
             mOnline = (ImageView) itemView.findViewById(R.id.callistcell_onlineImage);
             mEventCell = (ImageView) itemView.findViewById(R.id.callistcell_eventImage);
+            calTime = (RegularTitleTextView) itemView.findViewById(R.id.cal_time);
 
-
-            mEventName.setTypeface(workSans_Light);
-
-            calListCell = (ImageView) itemView.findViewById(R.id.calEvent_cell);
+            calListCell = (RelativeLayout) itemView.findViewById(R.id.calEvent_cell);
             calListCell.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     listener.mEventCell_Clicked(v, getAdapterPosition());
                 }
             });
@@ -65,6 +62,7 @@ public class CalendarEventAdapter extends RecyclerView.Adapter<CalendarEventAdap
         TextView mEventName = viewHolder.mEventName;
         ImageView mEventCell = viewHolder.mEventCell;
         ImageView mOnline = viewHolder.mOnline;
+        RegularTitleTextView caltime = viewHolder.calTime;
         boolean mFlag = viewHolder.mFlag;
 
         Picasso.with(mContext).load(eventItem.getEventImage()).into(mEventCell);
@@ -72,6 +70,12 @@ public class CalendarEventAdapter extends RecyclerView.Adapter<CalendarEventAdap
         mEventName.setText(eventItem.getEventName());
         mFlag = eventItem.getEventOnline();
 
+        caltime.setText(eventItem.getmEventTime());
+        if (eventItem.getmEventTime().equals("")) {
+            caltime.setVisibility(View.GONE);
+        }else{
+            caltime.setVisibility(View.VISIBLE);
+        }
         if (mFlag){
 
             Picasso.with(mContext).load(R.drawable.registration_background).into(mOnline);

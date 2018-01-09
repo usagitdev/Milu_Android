@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.squareup.picasso.Picasso;
 
@@ -23,13 +24,15 @@ public class LiveFeedInstagramAdapter extends RecyclerView.Adapter<LiveFeedInsta
 
 
         public ImageView insImage;
+        public LinearLayout instamoreView;
 
         public ViewHolder(View itemView){
 
             super(itemView);
 
             insImage = (ImageView) itemView.findViewById(R.id.liveMingle_InstagramCell);
-            insImage.setOnClickListener(new View.OnClickListener() {
+            instamoreView = (LinearLayout) itemView.findViewById(R.id.instagram_more_view);
+            instamoreView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -46,9 +49,14 @@ public class LiveFeedInstagramAdapter extends RecyclerView.Adapter<LiveFeedInsta
         LiveFeedInstagramItem insItem = mContacts.get(position);
 
         ImageView insImage = viewHolder.insImage;
-
-//        insImage.setImageResource(insItem.getInsImage());
-        Picasso.with(mContext).load(insItem.getInsImage()).into(insImage);
+        if (insItem.getInsImage() == 0) {
+            viewHolder.insImage.setVisibility(View.INVISIBLE);
+            viewHolder.instamoreView.setVisibility(View.VISIBLE);
+        }else{
+            viewHolder.insImage.setVisibility(View.VISIBLE);
+            viewHolder.instamoreView.setVisibility(View.INVISIBLE);
+            Picasso.with(mContext).load(insItem.getInsImage()).into(insImage);
+        }
 
     }
 

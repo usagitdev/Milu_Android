@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import charles.com.milu.Base.BaseFragment;
+import charles.com.milu.MiluApplication;
 import charles.com.milu.OngoingEventHostPage.OngoingEventHostPage;
 import charles.com.milu.R;
 
@@ -25,6 +27,8 @@ public class LiveEventFragment extends BaseFragment implements LiveEventAdapter.
 
     @BindView(R.id.liveEvnet_recyclerview)
     RecyclerView mRecyclerView;
+    @BindView(R.id.empty_feed_view)
+    LinearLayout emptyView;
 
 
     private Context mContext;
@@ -53,10 +57,16 @@ public class LiveEventFragment extends BaseFragment implements LiveEventAdapter.
     public void initView() {
         super.initView();
         setToolBar();
+        boolean b = ((MiluApplication) mAct.getApplication()).appInfo.getUserLogin();
+        if (b) {
+            emptyView.setVisibility(View.INVISIBLE);
+            mRecyclerView.setVisibility(View.VISIBLE);
+        } else {
+            emptyView.setVisibility(View.VISIBLE);
+            mRecyclerView.setVisibility(View.INVISIBLE);
+        }
         setAdapter();
-
     }
-
     @Override
     public void setToolBar(){
 

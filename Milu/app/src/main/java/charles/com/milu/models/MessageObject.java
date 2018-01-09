@@ -1,4 +1,4 @@
-package charles.com.milu.models;
+package charles.com.milu.Models;
 
 import com.google.gson.annotations.SerializedName;
 

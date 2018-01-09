@@ -4,6 +4,7 @@ package charles.com.milu.HomeScreen;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -18,17 +19,22 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import charles.com.milu.Base.BaseFragment;
 import charles.com.milu.CalendarView.CalendarFragment;
+import charles.com.milu.Dialog.BluringDialog;
 import charles.com.milu.EventDash.EventDashAdapter;
 import charles.com.milu.EventDash.EventDashItem;
 import charles.com.milu.FavouriteEvents.FavEventFragment;
 import charles.com.milu.Fragments.CreateEventFragment;
 import charles.com.milu.HotEvents.HotEventsFragment;
 import charles.com.milu.LiveEvents.LiveEventFragment;
-import charles.com.milu.MeetUps.MeetUpFragment;
+import charles.com.milu.MeetUps.MeetUpLocationSelectionFragment;
+import charles.com.milu.MeetUps.MeetUpSetup1CategoriesFragment;
+import charles.com.milu.MeetUps.MeetupSetup2TagsFragment;
+import charles.com.milu.MiluApplication;
 import charles.com.milu.MyEvents.MyEventsFragment;
 import charles.com.milu.NewEvents.NewEventsFragment;
 import charles.com.milu.R;
 import charles.com.milu.UpComingEvents.UpComingFragment;
+import charles.com.milu.utils.Blur;
 import charles.com.milu.utils.Utilities;
 import charles.com.milu.utils.util.ImageCache;
 import charles.com.milu.utils.util.ImageFetcher;
@@ -254,7 +260,14 @@ public class Tabbar_eventdash extends BaseFragment implements EventDashAdapter.I
             @Override
             public void onClick(View v) {
 
-                addChildFragment(MyEventsFragment.getInstance(), true);
+                boolean b = ((MiluApplication) mAct.getApplication()).appInfo.getUserLogin();
+                if (b) {
+                    addChildFragment(MyEventsFragment.getInstance(), true);
+                }else{
+                    BluringDialog fragment = BluringDialog.newInstance();
+                    fragment.setMessage(mAct.getResources().getString(R.string.str_create_login));
+                    fragment.show(mAct.getSupportFragmentManager(), "dialog");
+                }
 
             }
         });
@@ -274,7 +287,14 @@ public class Tabbar_eventdash extends BaseFragment implements EventDashAdapter.I
             @Override
             public void onClick(View v) {
 
-                addChildFragment(CalendarFragment.getInstance(), true);
+                boolean b = ((MiluApplication) mAct.getApplication()).appInfo.getUserLogin();
+                if (b) {
+                    addChildFragment(CalendarFragment.getInstance(), true);
+                }else{
+                    BluringDialog fragment = BluringDialog.newInstance();
+                    fragment.setMessage(mAct.getResources().getString(R.string.str_calendar_login));
+                    fragment.show(mAct.getSupportFragmentManager(), "dialog");
+                }
 
             }
         });
@@ -283,8 +303,14 @@ public class Tabbar_eventdash extends BaseFragment implements EventDashAdapter.I
 
             @Override
             public void onClick(View v) {
-
-                addChildFragment(MeetUpFragment.getInstance(), true);
+                boolean b = ((MiluApplication) mAct.getApplication()).appInfo.getUserLogin();
+                if (b) {
+                    addChildFragment(MeetUpSetup1CategoriesFragment.getInstance(), true);
+                }else{
+                    BluringDialog fragment = BluringDialog.newInstance();
+                    fragment.setMessage(mAct.getResources().getString(R.string.str_meetup_login));
+                    fragment.show(mAct.getSupportFragmentManager(), "dialog");
+                }
 
             }
         });
@@ -332,14 +358,6 @@ public class Tabbar_eventdash extends BaseFragment implements EventDashAdapter.I
         });
     }
 
-//    public void setTitleType(){
-//
-//        workSans_Light = Typeface.createFromAsset(getActivity().getAssets(),"WorkSans-Light.ttf");
-//        workSans_Regular = Typeface.createFromAsset(getActivity().getAssets(),"WorkSans-Regular.ttf");
-//
-//        titleBar_title = (TextView) view.findViewById(R.id.titleBar_Title);
-//        titleBar_title.setTypeface(workSans_Light);
-//    }
     public  void setAdapter(){
 
         Utilities.setLayoutManager(mAct, evnetDash_RecyclerView, true, true, false);
@@ -368,38 +386,6 @@ public class Tabbar_eventdash extends BaseFragment implements EventDashAdapter.I
         adapter.setListener(this);
     }
 
-//    public  void  setDashboardText_font(){
-//
-//            liveEvnet_title.setTypeface(workSans_Light);
-//            liveEvnet_count.setTypeface(workSans_Light);
-//
-//            hotEvnet_title.setTypeface(workSans_Regular);
-//            hotEvnet_count.setTypeface(workSans_Light);
-//
-//            upComing_title.setTypeface(workSans_Light);
-//            upComing_count.setTypeface(workSans_Light);
-//
-//            favEvent_title.setTypeface(workSans_Regular);
-//            favEvent_count.setTypeface(workSans_Light);
-//
-//            myEvent_title.setTypeface(workSans_Light);
-//
-//            newEvent_title.setTypeface(workSans_Light);
-//            newEvent_count.setTypeface(workSans_Light);
-//
-//            calEvent_title.setTypeface(workSans_Light);
-//            calEvent_count.setTypeface(workSans_Light);
-//            calEvent_mon.setTypeface(workSans_Light);
-//            calEvent_date.setTypeface(workSans_Light);
-//
-//            meetEvnet_title.setTypeface(workSans_Regular);
-//            meetEvnet_count.setTypeface(workSans_Light);
-//
-//            invite_tile.setTypeface(workSans_Light);
-//            invite_count.setTypeface(workSans_Light);
-//
-//    }
-
     @Override
     public void eventDashCell_Clicked(View v, int adapterPosition) {
 
@@ -414,11 +400,24 @@ public class Tabbar_eventdash extends BaseFragment implements EventDashAdapter.I
             case R.id.toolbar_btn_left:
                 break;
             case R.id.toolbar_btn_right1:
-                addChildFragment(CreateEventFragment.getInstance(), true);
+                gotoCreateEvent();
                 break;
             case R.id.toolbar_btn_right2:
                 break;
         }
+    }
+
+    public void gotoCreateEvent() {
+
+        boolean b = ((MiluApplication) mAct.getApplication()).appInfo.getUserLogin();
+        if (b) {
+            addChildFragment(CreateEventFragment.getInstance(), true);
+        }else{
+            BluringDialog fragment = BluringDialog.newInstance();
+            fragment.setMessage(mAct.getResources().getString(R.string.str_create_login));
+            fragment.show(mAct.getSupportFragmentManager(), "dialog");
+        }
+
     }
 
 }

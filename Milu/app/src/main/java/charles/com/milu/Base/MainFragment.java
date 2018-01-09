@@ -28,10 +28,10 @@ import charles.com.milu.utils.TodayTextDrawable;
 public class MainFragment extends BaseFragment {
 
 	@BindView(R.id.main_view_pager)
-	DisablePagingViewPager viewPager;
+	public DisablePagingViewPager viewPager;
 
 	@BindView(R.id.main_view_tab_layout)
-	TabLayout tabLayout;
+	public TabLayout tabLayout;
 
 	TextView todayTextView;
 

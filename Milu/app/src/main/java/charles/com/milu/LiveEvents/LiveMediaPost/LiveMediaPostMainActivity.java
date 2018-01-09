@@ -3,6 +3,7 @@ package charles.com.milu.LiveEvents.LiveMediaPost;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.wefika.horizontalpicker.HorizontalPicker;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import charles.com.milu.Base.BaseActivity;
 import charles.com.milu.MediaSelect_Activity.MediaSelectActivity;
 import charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager;
 import charles.com.milu.R;
@@ -22,32 +25,59 @@ import charles.com.milu.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LiveMediaPostMainActivity extends AppCompatActivity {
+public class LiveMediaPostMainActivity extends BaseActivity {
 
 
+    @BindView(R.id.liveMediaPost_Hpicker)
     HorizontalPicker Hpicker;
     private List<String> dataValues = new ArrayList<>();
-    private NonSwipeableViewPager mediaPostViewPager;
     private ImmersionBar mImmersionBar;
 
+    @BindView(R.id.liveMediapostMainContainer)
+    NonSwipeableViewPager mediaPostViewPager;
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_live_feed_media_post);
+    @Override
+    protected int addView() {
+        return R.layout.fragment_live_feed_media_post;
+    }
 
-        setBackButton();
+    @Override
+    protected void initView(@Nullable Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
+//		setStatusBarTranslucent(true);
 
-        setCheckButton();
-
+        setToolBar();
         setHorizontalPicker();
 
-        setStatusBar();
-
-        mediaPostViewPager = (NonSwipeableViewPager) findViewById(R.id.liveMediapostMainContainer);
         mediaPostViewPager.setAdapter(new LiveMediaPostAdapter(getSupportFragmentManager()));
         mediaPostViewPager.setCurrentItem(0, false);
 
+
     }
+    @Override
+    public void setToolBar() {
+        assert btnMenu != null;
+        btnMenu.setImageResource(R.drawable.nav_bar_cancel_icon);
+        btnMenu.setOnClickListener(this);
+
+        assert rightButton2 != null;
+        rightButton2.setImageResource(R.drawable.nav_bar_check_mark_icon);
+        rightButton2.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.toolbar_btn_right2:
+                setCheckButton();
+                break;
+            case R.id.toolbar_btn_left:
+                finish();
+                break;
+        }
+
+    }
+
     public void setStatusBar(){
 
         mImmersionBar = ImmersionBar.with(this);
@@ -63,7 +93,6 @@ public class LiveMediaPostMainActivity extends AppCompatActivity {
 
     public void setHorizontalPicker(){
 
-        Hpicker = (HorizontalPicker) findViewById(R.id.liveMediaPost_Hpicker);
 
         setHPickerVales();
 
@@ -110,31 +139,11 @@ public class LiveMediaPostMainActivity extends AppCompatActivity {
 
     public void setCheckButton(){
 
-        ImageView checkButton = (ImageView) findViewById(R.id.liveMediaPost_CheckButton);
-        checkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(getApplicationContext(),"check button clicked!!!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), MediaSelectActivity.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
+        Toast.makeText(LiveMediaPostMainActivity.this,"check button clicked!!!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(LiveMediaPostMainActivity.this, MediaSelectActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 
-    public void setBackButton(){
-
-        ImageView backButton = (ImageView) findViewById(R.id.liveMediaPost_BackButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                finish();
-
-            }
-        });
-    }
 }

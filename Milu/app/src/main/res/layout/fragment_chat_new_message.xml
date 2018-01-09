@@ -28,77 +28,81 @@
         android:paddingBottom="44dp"/>
 
 
-    <android.support.v7.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_56"
-        android:background="@drawable/nav_bar_vd"
-        app:cardBackgroundColor="@color/color_Onyx"
-        app:cardCornerRadius="0.001dp"
-        app:cardElevation="5dp">
-        <LinearLayout
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_48"
-            android:background="@color/color_Onyx">
-            <charles.com.milu.CustomViews.TitleTextView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dimen_48"
-                android:text="TO"
-                android:layout_gravity="center_vertical"
-                android:textSize="20.0sp"
-                android:gravity="center_vertical"
-                android:textColor="@color/color_DimGray"
-                android:layout_marginStart="@dimen/dimen_16" />
-
-            <EditText
-                android:id="@+id/edt_conversation_name"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_56"
+            android:background="@drawable/nav_bar_vd"
+            app:cardBackgroundColor="@color/color_Onyx"
+            app:cardCornerRadius="0.001dp"
+            app:cardElevation="5dp">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/transparent"
-                android:textSize="@dimen/dimen_20"
-                android:textColor="@color/white"
-                android:text="arena"
-                android:fontFamily="@string/font_light"
-                android:layout_marginStart="@dimen/dimen_08"
-                android:focusable="true"/>
-        </LinearLayout>
+                android:layout_height="@dimen/dimen_48"
+                android:background="@color/color_Onyx">
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_48"
+                    android:text="TO"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20.0sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/color_DimGray"
+                    android:layout_marginStart="@dimen/dimen_16" />
 
-    </android.support.v7.widget.CardView>
+                <EditText
+                    android:id="@+id/edt_conversation_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/dimen_20"
+                    android:textColor="@color/white"
+                    android:text="arena"
+                    android:fontFamily="@string/font_light"
+                    android:layout_marginStart="@dimen/dimen_08"
+                    android:focusable="true"/>
+            </LinearLayout>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/nav_bar_vd"
-        app:cardBackgroundColor="@color/color_Onyx"
-        app:cardCornerRadius="0.001dp"
-        app:cardElevation="5dp">
-        <RelativeLayout
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_56"
-            android:background="@color/color_Onyx">
-            <charles.com.milu.utils.CustomImageButton
-                android:id="@+id/nav_close_button"
-                android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/nav_bar_vd"
+            app:cardBackgroundColor="@color/color_Onyx"
+            app:cardCornerRadius="0.001dp"
+            app:cardElevation="5dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_56"
-                android:src="@drawable/nav_bar_cancel_icon"
-                android:layout_gravity="center_vertical"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dimen_16"/>
+                android:background="@color/color_Onyx">
+                <charles.com.milu.utils.CustomImageButton
+                    android:id="@+id/nav_close_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_56"
+                    android:src="@drawable/nav_bar_cancel_icon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_16"/>
 
-            <charles.com.milu.CustomViews.TitleTextView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dimen_56"
-                android:gravity="center_vertical"
-                android:text="new message"
-                android:layout_gravity="center_vertical"
-                android:layout_centerVertical="true"
-                android:textColor="@color/color_Milumain"
-                android:textSize="20.0sp"
-                android:layout_marginStart="@dimen/dimen_72"/>
+                <charles.com.milu.CustomViews.TitleTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_56"
+                    android:gravity="center_vertical"
+                    android:text="new message"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/color_Milumain"
+                    android:textSize="20.0sp"
+                    android:layout_marginStart="@dimen/dimen_72"/>
 
-        </RelativeLayout>
+            </RelativeLayout>
 
 
-    </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
 
 </FrameLayout>

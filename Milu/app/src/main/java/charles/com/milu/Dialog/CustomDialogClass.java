@@ -7,6 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import charles.com.milu.R;
 
@@ -20,6 +21,7 @@ public class CustomDialogClass extends Dialog implements
     public Activity c;
     public Dialog d;
     public CardView yes;
+    public ImageButton logoutBtn;
 
     public CustomDialogClass(Activity a) {
         super(a);
@@ -33,6 +35,7 @@ public class CustomDialogClass extends Dialog implements
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.fragment_dialog);
         yes = (CardView) findViewById(R.id.cdv_fb_button);
+        logoutBtn = (ImageButton)findViewById(R.id.imv_logout);
         yes.setOnClickListener(this);
 
     }
@@ -41,6 +44,8 @@ public class CustomDialogClass extends Dialog implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.cdv_fb_button:
+                break;
+            case R.id.imv_logout:
                 break;
             default:
                 break;

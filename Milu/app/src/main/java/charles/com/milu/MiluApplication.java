@@ -1,10 +1,12 @@
 package charles.com.milu;
 
-import android.app.Application;
 import android.content.Context;
+import android.location.Location;
+import android.preference.PreferenceManager;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import charles.com.milu.AppDataPak.AppInfo;
 import charles.com.milu.utils.SmartAsyncPolicyHolder;
 
 /**
@@ -14,6 +16,12 @@ import charles.com.milu.utils.SmartAsyncPolicyHolder;
 public class MiluApplication extends MultiDexApplication {
 
     public static boolean isCollection = false;
+    public static Location myLocation;
+    static MiluApplication mInstance;
+
+    public AppInfo appInfo;
+
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -22,6 +30,17 @@ public class MiluApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+//        myLocation = new Location();
         SmartAsyncPolicyHolder.INSTANCE.init(getApplicationContext());
+        appInfo = new AppInfo(PreferenceManager.getDefaultSharedPreferences(this));
+
     }
+
+    public static synchronized MiluApplication getInstance() {
+        return mInstance;
+    }
+    public void setmInstance(MiluApplication mInstance) {
+        MiluApplication.mInstance = mInstance;
+    }
+
 }

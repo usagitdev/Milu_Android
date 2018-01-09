@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +27,7 @@ import com.google.android.gms.maps.MapView;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
+import com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipeDirectionalView;
 import com.mindorks.placeholderview.Utils;
@@ -35,6 +37,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import charles.com.milu.MeetUps.GridSpacingItemDecoration;
+import charles.com.milu.MiluApplication;
 import charles.com.milu.R;
 
 /**
@@ -54,40 +57,19 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
     private int dotscount;
     private ImageView[] dots;
     public RollPagerView mViewPager;
-    Typeface workSans_Light;
 
-    TextView userName, userJob, userWay, userResume, interestsTitle;
-    TextView connectoinTitle, campingTxt, starTxt, footballTxt;
-    TextView instagramTitle, shareTxt, instagramConnectTxt;
-    TextView recommendTxt, friendTxt;
+    public LinearLayout emptyView;
+    public RelativeLayout detailView;
 
-    ArrayList<LiveFeedConnectionItem> mItems;
     ArrayList<LiveFeedInstagramItem> insItems;
 
+    RecyclerViewPager mRecyclerView;
+    RelativeLayout down_arrow_botton;
 
-
+    LinearLayout connectionPagerDotView;
+    ImageView dot1, dot2, dot3;
     public LiveFeedMingleFragment() {
         // Required empty public constructor
-    }
-
-    public void setFonts(View view){
-
-
-        userName = (TextView) view.findViewById(R.id.liveMingle_userName);
-        userJob = (TextView) view.findViewById(R.id.liveMingle_userJob);
-        userWay = (TextView) view.findViewById(R.id.liveMingle_userWay);
-        userResume = (TextView) view.findViewById(R.id.liveMingle_UserresumeTxt);
-        interestsTitle = (TextView) view.findViewById(R.id.liveMingle_InterestsTitle);
-        connectoinTitle = (TextView) view.findViewById(R.id.liveMingle_ConnectionTitle);
-        campingTxt = (TextView) view.findViewById(R.id.liveMingle_CampingTxt);
-        starTxt = (TextView) view.findViewById(R.id.liveMingle_StarTxt);
-        footballTxt = (TextView) view.findViewById(R.id.liveMingle_FootTxt);
-        instagramTitle = (TextView) view.findViewById(R.id.liveMingle_InstagramTitle);
-        shareTxt = (TextView) view.findViewById(R.id.liveMingle_Sharetxt);
-        instagramConnectTxt = (TextView) view.findViewById(R.id.liveMingle_InstagramConTxt);
-        recommendTxt = (TextView) view.findViewById(R.id.liveMingle_RecommendTxt);
-        friendTxt = (TextView) view.findViewById(R.id.liveMingle_FriendTxt);
-
     }
 
     @Override
@@ -103,8 +85,9 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
                         tinder.setCustomObjectListener(new TinderDirectionalCard.MyCustomObjectListener() {
                             @Override
                             public void OnClickCardView(Integer data) {
-                                userDetailPage.setVisibility(view.VISIBLE);
-                                mSwipeView.setVisibility(view.INVISIBLE);
+                                userDetailPage.setVisibility(View.VISIBLE);
+                                mSwipeView.setVisibility(View.INVISIBLE);
+                                down_arrow_botton.setVisibility(View.VISIBLE);
                             }
                         });
                         mSwipeView.addView(tinder);
@@ -129,11 +112,22 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
                 public void OnClickCardView(Integer data) {
                     userDetailPage.setVisibility(View.VISIBLE);
                     mSwipeView.setVisibility(View.INVISIBLE);
+                    down_arrow_botton.setVisibility(View.VISIBLE);
                     userDetialPageButtonLayout.setVisibility(View.VISIBLE);
                 }
             });
             mSwipeView.addView(tinder);
         }
+//        boolean b = ((MiluApplication) getActivity().getApplication()).appInfo.getUserLogin();
+//        if (!b) {
+//            mSwipeView.setVisibility(View.INVISIBLE);
+//            detailView.setVisibility(View.INVISIBLE);
+//            emptyView.setVisibility(View.VISIBLE);
+//        }else{
+//            emptyView.setVisibility(View.INVISIBLE);
+//            mSwipeView.setVisibility(View.VISIBLE);
+//            detailView.setVisibility(View.INVISIBLE);
+//        }
     }
 
     @Override
@@ -141,6 +135,8 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_live_feed_mingle, container, false);
+        emptyView = (LinearLayout)view.findViewById(R.id.empty_feed_view);
+        detailView = (RelativeLayout) view.findViewById(R.id.detailview);
 
         setMingleButtons(view);
 
@@ -148,7 +144,7 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
 
         setMingleUserDetailImages(view);
 
-        setFonts(view);
+//        setFonts(view);
 
         setDetailPageButtons(view);
 
@@ -168,7 +164,7 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
         insItems.add(2, new LiveFeedInstagramItem(R.drawable.tech));
         insItems.add(3, new LiveFeedInstagramItem(R.drawable.family));
         insItems.add(4, new LiveFeedInstagramItem(R.drawable.health_wellness));
-        insItems.add(5, new LiveFeedInstagramItem(R.drawable.sports_fitness));
+        insItems.add(5, new LiveFeedInstagramItem(0));
 
         LiveFeedInstagramAdapter adapter = new LiveFeedInstagramAdapter(getContext(), insItems);
         mRecyclerView.setAdapter(adapter);
@@ -184,33 +180,52 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
 
     public void setAdapter(View view){
 
-        RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.liveMingle_ConnectionRecyclerView);
+        dot1 = (ImageView)view.findViewById(R.id.conn_dot1);
+        dot2 = (ImageView)view.findViewById(R.id.conn_dot2);
+        dot3 = (ImageView)view.findViewById(R.id.conn_dot3);
+        dot1.setSelected(true);
+        mRecyclerView = (RecyclerViewPager) view.findViewById(R.id.liveMingle_ConnectionRecyclerView);
+        LinearLayoutManager layout = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,
+                false);
+        mRecyclerView.setLayoutManager(layout);
+        mRecyclerView.setAdapter(new LiveMingleIConnectionGridLayoutAdapter(getContext(), mRecyclerView));
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLongClickable(true);
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int scrollState) {
+            }
 
-        mItems = LiveFeedConnectionItem.createContactsList(0);
-        mItems.add(0, new LiveFeedConnectionItem(R.drawable.movements,"movements","1st"));
-        mItems.add(1, new LiveFeedConnectionItem(R.drawable.outdoor_adventure,"outdoor & adventure","1st"));
-        mItems.add(2, new LiveFeedConnectionItem(R.drawable.tech,"tech","1st"));
-        mItems.add(3, new LiveFeedConnectionItem(R.drawable.family,"family","1st"));
-        mItems.add(4, new LiveFeedConnectionItem(R.drawable.health_wellness,"health & wellness","1st"));
-        mItems.add(5, new LiveFeedConnectionItem(R.drawable.sports_fitness,"sports & fitness","1st"));
-        mItems.add(6, new LiveFeedConnectionItem(R.drawable.learning,"learning","1st"));
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
+            }
+        });
+        mRecyclerView.addOnPageChangedListener(new RecyclerViewPager.OnPageChangedListener() {
+            @Override
+            public void OnPageChanged(int oldPosition, int newPosition) {
+                Log.d("test", "oldPosition:" + oldPosition + " newPosition:" + newPosition);
+                dot1.setSelected(false);
+                dot2.setSelected(false);
+                dot3.setSelected(false);
+                if (newPosition == 0){
+                    dot1.setSelected(true);
+                }else if (newPosition == 1) {
+                    dot2.setSelected(true);
+                }else{
+                    dot3.setSelected(true);
+                }
 
+            }
+        });
 
-        LiveFeedConnectionAdapter adapter = new LiveFeedConnectionAdapter(getContext(), mItems);
-        adapter.setListener(this);
-        mRecyclerView.setAdapter(adapter);
-
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
-        mRecyclerView.setLayoutManager(gridLayoutManager);
-
-
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(2, 5, true));
-
-
+        mRecyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+            }
+        });
 
     }
+
 
     public void setDetailPageButtons(View view){
 
@@ -220,6 +235,7 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
                 public void onClick(View v) {
 
                     userDetailPage.setVisibility(View.INVISIBLE);
+                    down_arrow_botton.setVisibility(View.INVISIBLE);
                     mSwipeView.setVisibility(View.VISIBLE);
                     userDetialPageButtonLayout.setVisibility(View.INVISIBLE);
 
@@ -232,6 +248,7 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
                 public void onClick(View v) {
 
                     userDetailPage.setVisibility(View.INVISIBLE);
+                    down_arrow_botton.setVisibility(View.INVISIBLE);
                     mSwipeView.setVisibility(View.VISIBLE);
                     userDetialPageButtonLayout.setVisibility(View.INVISIBLE);
                 }
@@ -243,6 +260,7 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
                 public void onClick(View v) {
 
                     userDetailPage.setVisibility(View.INVISIBLE);
+                    down_arrow_botton.setVisibility(View.INVISIBLE);
                     mSwipeView.setVisibility(View.VISIBLE);
                     userDetialPageButtonLayout.setVisibility(View.INVISIBLE);
 
@@ -288,7 +306,6 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
             ImageView view = new ImageView(container.getContext());
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
             view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-//            view.setImageResource(imgs[position]);
             Picasso.with(getContext()).load(imgs[position]).into(view);
             return view;
         }
@@ -300,12 +317,14 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
     }
 
     public void setMingleUserDetailPage(View view){
+        down_arrow_botton = (RelativeLayout)view.findViewById(R.id.down_arrow_botton);
 
         userDetialPageButtonLayout = (RelativeLayout) view.findViewById(R.id.liveMingle_DetailButtonLayout);
             userDetialPageButtonLayout.setVisibility(view.INVISIBLE);
 
         userDetailPage = (ScrollView) view.findViewById(R.id.liveMingle_userDetailPage);
             userDetailPage.setVisibility(view.INVISIBLE);
+        down_arrow_botton.setVisibility(View.INVISIBLE);
 
         ImageView backButton = (ImageView) view.findViewById(R.id.liveMingle_userDetailPagebackButton);
         backButton.setOnClickListener(new OnClickListener() {
@@ -315,6 +334,7 @@ public class LiveFeedMingleFragment extends Fragment implements TinderDirectiona
                 userDetailPage.setVisibility(View.INVISIBLE);
                 mSwipeView.setVisibility(View.VISIBLE);
                 userDetialPageButtonLayout.setVisibility(View.INVISIBLE);
+                down_arrow_botton.setVisibility(View.INVISIBLE);
 
             }
         });

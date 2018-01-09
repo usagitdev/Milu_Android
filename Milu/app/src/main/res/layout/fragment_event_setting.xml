@@ -30,19 +30,20 @@
                 android:id="@+id/lay1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_08"
+                android:layout_marginTop="@dimen/dimen_08"
                 android:background="@color/grid_state_focused"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_08">
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_08">
 
                     <charles.com.milu.utils.CustomClickTextView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_31"
-                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:textSize="18sp"
                         android:textColor="@color/white"
@@ -57,6 +58,13 @@
 
                 </RelativeLayout>
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line_vd"
+                    android:layout_marginTop="@dimen/dimen_08"
+                    android:layout_marginStart="@dimen/dimen_16"/>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_160">
@@ -64,6 +72,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_160"
+                        android:layout_margin="@dimen/dimen_08"
                         android:scaleType="centerInside"/>
 
                     <ImageView
@@ -82,18 +91,20 @@
                 android:layout_below="@+id/lay1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_08"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:background="@color/grid_state_focused"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dimen_08">
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center_vertical"
                         android:layout_marginStart="@dimen/dimen_08"
@@ -103,24 +114,28 @@
 
                     <EditText
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:background="@color/transparent"
                         android:textSize="18sp"/>
                 </LinearLayout>
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/color_DimGray"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:background="@drawable/line_vd"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dimen_08"
                     android:orientation="horizontal">
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center_vertical"
                         android:layout_marginStart="@dimen/dimen_08"
@@ -130,7 +145,7 @@
 
                     <EditText
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:background="@color/transparent"
                         android:textSize="18sp"/>
@@ -143,22 +158,18 @@
                 android:id="@+id/lay3"
                 android:layout_below="@+id/lay2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_08"
+                android:layout_height="36.0dp"
                 android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center_vertical"
                 android:background="@color/grid_state_focused"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center_vertical"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textSize="18sp"
                         android:textColor="@color/white"
                         android:text="ticket url"/>
@@ -169,7 +180,6 @@
                         android:layout_weight="5"
                         android:background="@color/transparent"
                         android:textSize="18sp"/>
-                </LinearLayout>
 
 
             </LinearLayout>
@@ -179,22 +189,21 @@
                 android:layout_below="@+id/lay3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_08"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:background="@color/grid_state_focused"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/dimen_31"
-                        android:layout_weight="2"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textSize="18sp"
+                        android:layout_centerVertical="true"
                         android:textColor="@color/white"
                         android:text="all-day"/>
 
@@ -203,63 +212,69 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/dimen_16"
                         style="@style/SwitchStyle"/>
                 </RelativeLayout>
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/color_DimGray"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line_vd"
+                    android:layout_marginStart="@dimen/dimen_16"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="36dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center_vertical"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textSize="18sp"
                         android:textColor="@color/white"
                         android:text="starts"/>
 
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:gravity="center_vertical"
                         android:layout_marginStart="@dimen/dimen_08"
                         android:textSize="18sp"
                         android:textColor="@color/white"
                         android:textAlignment="textEnd"
+                        android:layout_marginEnd="@dimen/dimen_16"
                         android:text="dec 15, 2017    10:00p"
                         tools:ignore="RtlCompat" />
                 </LinearLayout>
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/color_DimGray"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/line_vd"
+                    android:layout_marginStart="@dimen/dimen_16"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
                     android:orientation="horizontal">
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center_vertical"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textSize="18sp"
                         android:textColor="@color/white"
                         android:text="duration"/>
 
                     <charles.com.milu.CustomViews.TitleTextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/dimen_31"
+                        android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:gravity="center_vertical"
                         android:layout_marginStart="@dimen/dimen_08"
@@ -267,6 +282,7 @@
                         android:textColor="@color/white"
                         android:textAlignment="textEnd"
                         android:text="2h 30m"
+                        android:layout_marginEnd="@dimen/dimen_16"
                         tools:ignore="RtlCompat" />
                 </LinearLayout>
 
@@ -277,15 +293,14 @@
                 android:id="@+id/lay5"
                 android:layout_below="@+id/lay4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="95dp"
                 android:padding="@dimen/dimen_08"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:background="@color/grid_state_focused"
                 android:orientation="vertical">
                 <charles.com.milu.CustomViews.TitleTextView
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_31"
-                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/dimen_08"
                     android:textSize="18sp"
@@ -294,8 +309,7 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_80"
-                    android:layout_weight="5"
+                    android:layout_height="match_parent"
                     android:background="@color/transparent"
                     android:textSize="18sp"/>
             </LinearLayout>
@@ -304,15 +318,14 @@
                 android:id="@+id/lay6"
                 android:layout_below="@+id/lay5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="95.0dp"
                 android:padding="@dimen/dimen_08"
-                android:layout_marginTop="@dimen/dimen_25"
+                android:layout_marginTop="@dimen/dimen_16"
                 android:background="@color/grid_state_focused"
                 android:orientation="vertical">
                 <charles.com.milu.CustomViews.TitleTextView
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_31"
-                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:layout_marginStart="@dimen/dimen_08"
                     android:textSize="18sp"
@@ -321,8 +334,7 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_80"
-                    android:layout_weight="5"
+                    android:layout_height="match_parent"
                     android:background="@color/transparent"
                     android:textSize="18sp"/>
             </LinearLayout>
@@ -333,21 +345,20 @@
                 android:layout_below="@+id/lay6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_25"
+                android:layout_marginTop="@dimen/dimen_16"
                 android:background="@color/grid_state_focused"
-                android:padding="@dimen/dimen_08"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="35dp">
                     <charles.com.milu.utils.CustomClickTextView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_31"
-                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
+                        android:layout_centerVertical="true"
                         android:textSize="18sp"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textColor="@color/white"
                         android:text="private"/>
 
@@ -356,26 +367,27 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/dimen_16"
                         android:saveEnabled="true" />
 
                 </RelativeLayout>
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/dimen_08"
-                    android:background="@color/color_DimGray"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:background="@drawable/line_vd"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <charles.com.milu.utils.CustomClickTextView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_31"
-                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:textSize="18sp"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textColor="@color/white"
                         android:text="allow guest to invite"/>
 
@@ -384,6 +396,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dimen_16"
                         android:layout_alignParentEnd="true"/>
 
                 </RelativeLayout>
@@ -398,19 +411,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_25"
                 android:background="@color/grid_state_focused"
-                android:padding="@dimen/dimen_08"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="35dp">
                     <charles.com.milu.utils.CustomClickTextView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_31"
-                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:textSize="18sp"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textColor="@color/white"
                         android:text="mingle"/>
 
@@ -418,26 +429,27 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dimen_16"
                         android:layout_alignParentEnd="true"/>
 
                 </RelativeLayout>
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/dimen_08"
-                    android:background="@color/color_DimGray"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:background="@drawable/line_vd"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="35dp">
                     <charles.com.milu.utils.CustomClickTextView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_31"
-                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
+                        android:layout_centerVertical="true"
                         android:textSize="18sp"
-                        android:layout_marginStart="@dimen/dimen_08"
+                        android:layout_marginStart="@dimen/dimen_16"
                         android:textColor="@color/white"
                         android:text="networking"/>
 
@@ -445,6 +457,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dimen_16"
                         android:layout_alignParentEnd="true"/>
 
 
@@ -464,7 +477,6 @@
                 <charles.com.milu.CustomViews.TitleTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
                     android:gravity="center"
                     android:textSize="10sp"
                     android:textColor="@color/color_DimGray"
@@ -484,14 +496,19 @@
                 android:layout_marginBottom="@dimen/dimen_25">
                 <charles.com.milu.utils.CustomClickTextView
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_31"
-                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textSize="24sp"
                     android:textColor="@color/color_Milumain"
                     android:text="DELETE EVENT"/>
 
             </LinearLayout>
+
+            <View
+                android:layout_below="@+id/lay10"
+                android:layout_width="wrap_content"
+                android:background="@color/transparent"
+                android:layout_height="100dp"/>
 
 
         </RelativeLayout>

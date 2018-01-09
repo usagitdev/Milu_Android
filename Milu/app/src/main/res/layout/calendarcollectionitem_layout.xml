@@ -36,9 +36,9 @@
         <com.sutanu.blureffectview.BlurEffectView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            app:blurEffectViewRadius="4dp"
+            app:blurEffectViewRadius="16dp"
             app:blurEffectViewOverlayColor="@color/color_Onyx"
-            android:alpha="0"/>
+            android:alpha="0.75"/>
 
 
         <ImageView
@@ -93,19 +93,19 @@
 
                     <charles.com.milu.CustomViews.RegularTitleTextView
                         android:id="@+id/calCollectionEvent_name"
-                        android:layout_width="250dp"
-                        android:layout_height="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="juan burns"
                         android:layout_marginBottom="-3dp"
                         android:textColor="@color/colorWhite"
                         android:textSize="18sp" />
                     <charles.com.milu.CustomViews.TitleTextView
                         android:id="@+id/calCollectionEvent_likes"
-                        android:layout_width="250dp"
-                        android:layout_height="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="2K people"
                         android:textColor="@color/color_Manatee"
-                        android:textSize="18sp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 

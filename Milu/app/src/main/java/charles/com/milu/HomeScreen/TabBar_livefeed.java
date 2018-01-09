@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager;
@@ -20,6 +21,7 @@ import charles.com.milu.Base.BaseFragment;
 import charles.com.milu.CustomViews.TitleTextView;
 import charles.com.milu.GlobalFeed.GlobalFeedItem;
 import charles.com.milu.GlobalFeed.GlobalfeedAdapter;
+import charles.com.milu.MiluApplication;
 import charles.com.milu.R;
 import charles.com.milu.utils.CustomImageButton;
 import charles.com.milu.utils.Utilities;
@@ -49,6 +51,9 @@ public class TabBar_livefeed extends BaseFragment implements GlobalfeedAdapter.I
 
     @BindView(R.id.toolbar_btn_right2)
     CustomImageButton rightButton2;
+
+    @BindView(R.id.empty_feed_view)
+    LinearLayout emptyFeedView;
 
 
     GlobalfeedAdapter adapter;
@@ -81,7 +86,15 @@ public class TabBar_livefeed extends BaseFragment implements GlobalfeedAdapter.I
         mImageFetcher = new ImageFetcher(getActivity(), mImageThumbSize);
         mImageFetcher.setLoadingImage(R.drawable.empty_photo);
         mImageFetcher.addImageCache(getActivity().getSupportFragmentManager(), cacheParams);
+        if (((MiluApplication) mAct.getApplication()).appInfo.getUserLogin()) {
+            emptyFeedView.setVisibility(View.GONE);
+            rvContacts.setVisibility(View.VISIBLE);
+        }else {
+            emptyFeedView.setVisibility(View.VISIBLE);
+            rvContacts.setVisibility(View.GONE);
+        }
         setRecyclerView();
+
     }
 
     @Override

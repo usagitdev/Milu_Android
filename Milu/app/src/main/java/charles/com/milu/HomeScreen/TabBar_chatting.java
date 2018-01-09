@@ -99,7 +99,6 @@ public class TabBar_chatting extends BaseFragment {
         switch (view.getId()) {
 
             case R.id.toolbar_btn_left:
-                mAct.onBackPressed();
                 break;
 
             case R.id.toolbar_btn_right2:

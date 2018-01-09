@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.internal.IMapViewDelegate;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -31,9 +32,12 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import charles.com.milu.Base.BaseFragment;
+import charles.com.milu.CalendarView.calendarpageview.CalendarCardView;
+import charles.com.milu.CalendarView.calendarpageview.CalendarPageView;
 import charles.com.milu.EventBusListeners.ReplaceFragmentListener;
 import charles.com.milu.HomeScreen.Tabbar_eventdash;
 import charles.com.milu.MeetUps.GridSpacingItemDecoration;
+import charles.com.milu.MiluApplication;
 import charles.com.milu.NewEvents.NewEventsAdapter;
 import charles.com.milu.R;
 import butterknife.BindView;
@@ -52,14 +56,14 @@ public class CalendarFragment extends BaseFragment implements OnDateSelectedList
     @BindView(R.id.calCollection_RecyclerView)
     RecyclerView collectionRecyclerView;
 
-    @BindView(R.id.textView)
-    TextView textView;
-
     @BindView(R.id.calAdd_button)
     ImageView addButton;
 
     @BindView(R.id.calendarView)
-    MaterialCalendarView mCalender;
+    CalendarCardView mCalender;
+
+    @BindView(R.id.empty_feed_view)
+    LinearLayout emptyview;
 
 
     ArrayList<CalendarEventItem> mEventItems;
@@ -111,6 +115,15 @@ public class CalendarFragment extends BaseFragment implements OnDateSelectedList
         setCollectionViewData();
         calAddButtonSet();
 
+        boolean b = ((MiluApplication) mAct.getApplication()).appInfo.getUserLogin();
+        if (b) {
+            emptyview.setVisibility(View.INVISIBLE);
+            listRecyclerView.setVisibility(View.VISIBLE);
+        }else {
+            emptyview.setVisibility(View.VISIBLE);
+            listRecyclerView.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     @Override
@@ -148,28 +161,6 @@ public class CalendarFragment extends BaseFragment implements OnDateSelectedList
         return fragment;
     }
 
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        View view = inflater.inflate(R.layout.evanedash_calendar_fragment, container, false);
-//
-//        cal_ListView = (LinearLayout) view.findViewById(R.id.calListView);
-//        cal_CollectionView = (LinearLayout) view.findViewById(R.id.calCollectionView);
-//        listRecyclerView = (RecyclerView) view.findViewById(R.id.calEvent_RecyclerView);
-//        collectionRecyclerView = (RecyclerView) view.findViewById(R.id.calCollection_RecyclerView);
-//
-//        textView = (TextView) view.findViewById(R.id.textView);
-//
-//        setTitleType(view);
-//        setBackButton(view);
-//        setListIcon(view);
-//        setCalendar(view);
-//        setAdapter(view);
-//        setCollectionViewData(view);
-//        calAddButtonSet(view);
-//
-//        return view;
-//    }
     public void calAddButtonSet(){
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -218,24 +209,24 @@ public class CalendarFragment extends BaseFragment implements OnDateSelectedList
     public void setAdapter(){
 
         mEventItems = CalendarEventItem.createContactsList(0);
-        mEventItems.add(0, new CalendarEventItem(true,R.drawable.neweventback00,"the roots"));
-        mEventItems.add(1, new CalendarEventItem(false,R.drawable.neweventback01,"chemical brothers"));
-        mEventItems.add(2, new CalendarEventItem(true,R.drawable.neweventback02,"daft punk"));
-        mEventItems.add(3, new CalendarEventItem(true,R.drawable.neweventback03,"black keys"));
-        mEventItems.add(4, new CalendarEventItem(false,R.drawable.neweventback04,"chemical brothers"));
-        mEventItems.add(5, new CalendarEventItem(true,R.drawable.neweventback05,"absolutely fabulous"));
-        mEventItems.add(6, new CalendarEventItem(true,R.drawable.neweventback06,"amfa afterparty with me"));
-        mEventItems.add(7, new CalendarEventItem(false,R.drawable.neweventback07,"cocktail party"));
-        mEventItems.add(8, new CalendarEventItem(true,R.drawable.neweventback08,"halloween party"));
-        mEventItems.add(9, new CalendarEventItem(false,R.drawable.neweventback00,"the roots"));
-        mEventItems.add(10, new CalendarEventItem(false,R.drawable.neweventback01,"chemical brothers"));
-        mEventItems.add(11, new CalendarEventItem(true,R.drawable.neweventback02,"daft puck party"));
-        mEventItems.add(12, new CalendarEventItem(true,R.drawable.neweventback03,"chmical party with hie"));
-        mEventItems.add(13, new CalendarEventItem(false,R.drawable.neweventback04,"absolutely fabulous"));
-        mEventItems.add(14, new CalendarEventItem(false,R.drawable.neweventback05,"all-star after party"));
-        mEventItems.add(15, new CalendarEventItem(true,R.drawable.neweventback06,"cocktail party"));
-        mEventItems.add(16, new CalendarEventItem(true,R.drawable.neweventback07,"halloween midnight party"));
-        mEventItems.add(17, new CalendarEventItem(true,R.drawable.neweventback08,"amfa afterparty with me"));
+        mEventItems.add(0, new CalendarEventItem(true,R.drawable.neweventback00,"the roots", "9:00AM"));
+        mEventItems.add(1, new CalendarEventItem(false,R.drawable.neweventback01,"chemical brothers", ""));
+        mEventItems.add(2, new CalendarEventItem(true,R.drawable.neweventback02,"daft punk",""));
+        mEventItems.add(3, new CalendarEventItem(true,R.drawable.neweventback03,"black keys","11:00AM"));
+        mEventItems.add(4, new CalendarEventItem(false,R.drawable.neweventback04,"chemical brothers",""));
+        mEventItems.add(5, new CalendarEventItem(true,R.drawable.neweventback05,"absolutely fabulous","2:00PM"));
+        mEventItems.add(6, new CalendarEventItem(true,R.drawable.neweventback06,"amfa afterparty with me","3:00PM"));
+        mEventItems.add(7, new CalendarEventItem(false,R.drawable.neweventback07,"cocktail party",""));
+        mEventItems.add(8, new CalendarEventItem(true,R.drawable.neweventback08,"halloween party",""));
+        mEventItems.add(9, new CalendarEventItem(false,R.drawable.neweventback00,"the roots",""));
+        mEventItems.add(10, new CalendarEventItem(false,R.drawable.neweventback01,"chemical brothers","5:35PM"));
+        mEventItems.add(11, new CalendarEventItem(true,R.drawable.neweventback02,"daft puck party",""));
+        mEventItems.add(12, new CalendarEventItem(true,R.drawable.neweventback03,"chmical party with hie","6:00PM"));
+        mEventItems.add(13, new CalendarEventItem(false,R.drawable.neweventback04,"absolutely fabulous",""));
+        mEventItems.add(14, new CalendarEventItem(false,R.drawable.neweventback05,"all-star after party","10:00PM"));
+        mEventItems.add(15, new CalendarEventItem(true,R.drawable.neweventback06,"cocktail party",""));
+        mEventItems.add(16, new CalendarEventItem(true,R.drawable.neweventback07,"halloween midnight party",""));
+        mEventItems.add(17, new CalendarEventItem(true,R.drawable.neweventback08,"amfa afterparty with me",""));
 
         CalendarEventAdapter adapter = new CalendarEventAdapter(getContext(), mEventItems);
         listRecyclerView.setAdapter(adapter);
@@ -266,14 +257,14 @@ public class CalendarFragment extends BaseFragment implements OnDateSelectedList
 
     }
 
-    private String getSelectedDatesString() {
-        CalendarDay date = mCalender.getSelectedDate();
-        if (date == null) {
-            return "No Selection";
-        }
-        return FORMATTER.format(date.getDate());
-    }
-
+//    private String getSelectedDatesString() {
+//        CalendarDay date = mCalender.getca();
+//        if (date == null) {
+//            return "No Selection";
+//        }
+//        return FORMATTER.format(date.getDate());
+//    }
+//
     @Override
     public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
 

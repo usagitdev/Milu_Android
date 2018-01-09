@@ -2,17 +2,17 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.3'
     defaultConfig {
         applicationId "charles.com.milu"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        renderscriptTargetApi 25
+        renderscriptTargetApi 26
         renderscriptSupportModeEnabled true
         multiDexEnabled true//add this line
     }
@@ -24,18 +24,18 @@ android {
     }
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:multidex:1.0.2'
-
     compile('com.github.bumptech.glide:glide:4.2.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-// Add custom gradles
+    //    compile(name:'blur-release', ext:'aar')
 
+    // Add custom gradles
     compile 'com.github.BlackBoxVision:material-calendar-view:v1.5.5'
     compile 'com.github.skydoves:medal:1.0.1'
     compile 'com.ogaclejapan.arclayout:library:1.1.0@aar'
@@ -43,9 +43,11 @@ dependencies {
     compile 'com.gyf.barlibrary:barlibrary:2.3.0'
     compile 'com.github.florent37:camerafragment:1.0.7'
     compile 'com.xl.ratingbar:ratingbar:0.1.1'
-    compile 'com.android.support:appcompat-v7:25.4.0'
+
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:25.4.0'
+    compile 'com.android.support:design:26.1.0'
     compile 'com.wefika:horizontal-picker:1.1.1'
     compile 'com.google.android.gms:play-services:11.6.2'
     compile 'com.github.qinwenbo114:CircleMenu:v1.0'
@@ -54,22 +56,19 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     compile 'com.mindorks:placeholderview:0.7.1'
     compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
-    compile 'com.android.support:cardview-v7:25.4.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
     compile 'com.sutanu.blureffectview:blureffectview:1.0.1'
     compile 'com.prolificinteractive:material-calendarview:1.4.3'
     compile 'com.sch.calendar:easy-calendar:1.0.1'
-    compile 'com.tt:calendarpageview:1.0.0'
+//    compile 'com.tt:calendarpageview:1.0.0'
     compile 'de.hdodenhof:circleimageview:2.2.0'
-    compile 'com.android.support:recyclerview-v7:25.4.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.roughike:bottom-bar:2.3.1'
-    compile 'com.android.support:support-v4:25.4.0'
+    compile 'com.android.support:support-v4:26.1.0'
     compile 'org.greenrobot:eventbus:3.0.0'
-
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-
-
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     // ImageView Scalable
@@ -84,11 +83,13 @@ dependencies {
     compile 'com.ms-square:etsyblur:0.2.1'
     compile 'com.eightbitlab:supportrenderscriptblur:1.0.0'
     compile 'com.eightbitlab:blurview:1.3.3'
-//    compile 'jp.wasabeef:blurry:2.1.1'
+
+    //    compile 'jp.wasabeef:blurry:2.1.1'
     compile 'at.favre.lib:dali:0.3.4'
 
     //RatioLayout
     compile 'com.github.hackware1993:SelfDependLayout:1.0.0'
+
     // Section Picker
     compile 'com.github.egemenhamutcu:SectionPicker:1.0.0'
 
@@ -100,31 +101,57 @@ dependencies {
 
     //SnapHelper
     compile 'com.github.rubensousa:gravitysnaphelper:1.3'
+
     //TagView
 
-//    ViewAnimation
+    //    ViewAnimation
     compile 'com.nightonke:wowoviewpager:2.0.0'
 
     //StatusBar Transparent
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'com.jaeger.statusbarutil:library:1.4.0'
-
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
     //RecyclerViewPager
     compile 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2@aar'
+
     //Touch Imageview
     compile 'com.github.oxoooo:touch-image-view:1.0.1'
+
     //Proportional ImageView
     compile 'com.github.giuseppegiacoppo:proportional-imageview:1.0.2'
 
     //chat message view
     compile 'me.himanshusoni.chatmessageview:chat-message-view:1.0.7'
+
     //round image view
     compile 'com.makeramen:roundedimageview:2.3.0'
 
+    // Expandabletextview
+    compile 'at.blogc:expandabletextview:1.0.3'
+
+    //cameraView
+//    compile 'cjt.library.wheel:camera:1.1.9'
+//    compile 'com.github.florent37:camerafragment:1.0.7'
+    compile project(':Cameralibrary')
+
+    //permission Help
+    compile 'com.github.tajchert:nammu:1.2.0'
+
+    compile 'net.qiujuer.genius:ui:1.6.0'
+    implementation project(':blur-release')
+    compile 'net.qiujuer.genius:kit-handler:2.0.0-beta2'
+    // ProgressBar
+    compile 'com.wang.avi:library:2.1.3'
+    //Video view
+    compile 'com.sprylab.android.texturevideoview:texturevideoview:1.0.2'
+
+    compile 'com.tyorikan:voice-recording-visualizer:1.0.3@aar'
 }
 repositories {
     mavenCentral()
 }
 //distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip
+
+//apply plugin: 'com.google.gms.google-services'

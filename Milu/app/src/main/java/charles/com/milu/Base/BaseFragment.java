@@ -1,20 +1,38 @@
 package charles.com.milu.Base;
 
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.wang.avi.AVLoadingIndicatorView;
+
+import net.qiujuer.genius.blur.StackBlur;
+import net.qiujuer.genius.kit.handler.Run;
+import net.qiujuer.genius.kit.handler.runable.Action;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import charles.com.milu.Adapters.BaseActivity;
 import charles.com.milu.CustomViews.TitleTextView;
 import charles.com.milu.R;
 import charles.com.milu.utils.CustomImageButton;
@@ -29,6 +47,10 @@ public class BaseFragment extends Fragment
         View.OnClickListener,
         OnItemClickListener,
         OnBackPressListener {
+    protected TextView mText;
+    protected TextView mTime;
+    protected boolean isScale = true;
+    protected Bitmap mBitmap;
 
     @Nullable
     @BindView(R.id.toolbar_btn_left)
@@ -55,6 +77,11 @@ public class BaseFragment extends Fragment
     public
     FrameLayout containerview;
 
+    @Nullable
+    @BindView(R.id.progressBar)
+    public
+    AVLoadingIndicatorView progressBar;
+
     protected BaseActivity mAct;
 
     @Nullable
@@ -71,11 +98,21 @@ public class BaseFragment extends Fragment
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Utilities.dismissKeyboard(mAct, view);
             }
         });
         return view;
+    }
+    void startAnim(){
+        assert progressBar != null;
+        progressBar.show();
+        // or avi.smoothToShow();
+    }
+
+    void stopAnim(){
+        assert progressBar != null;
+        progressBar.hide();
+        // or avi.smoothToHide();
     }
 
     /**
@@ -129,7 +166,6 @@ public class BaseFragment extends Fragment
 
             case R.id.toolbar_btn_left:
 
-//                ((MainActivity) mAct).toggleDrawer();
                 break;
         }
     }
@@ -260,4 +296,157 @@ public class BaseFragment extends Fragment
 
         fm.popBackStack(backStack, 0);
     }
+
+    public void hideKeyboard() {
+        // Check if no view has focus:
+        View view = getActivity().getCurrentFocus();
+        if (view != null) {
+            InputMethodManager inputManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+    }
+
+
+    public void setBitmap(Bitmap bitmap, View view) {
+//        View view = getView();
+        if (view != null) {
+            mBitmap = Bitmap.createBitmap(view.getWidth(),
+                    view.getHeight(),
+                    Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(mBitmap);
+            canvas.translate(-view.getLeft(), -view.getTop());
+            canvas.scale(1, 1);
+            Paint paint = new Paint();
+            paint.setFlags(Paint.FILTER_BITMAP_FLAG);
+            canvas.drawBitmap(bitmap, 0, 0, paint);
+
+            // Call Blur
+            blur(view);
+        }
+    }
+
+    protected Bitmap getScaleBitmap(Bitmap bitmap) {
+        float scaleFactor = 9;
+        float scale = 1f / scaleFactor;
+        Matrix matrix = new Matrix();
+        matrix.postScale(scale, scale);
+        Bitmap ret = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+        bitmap.recycle();
+        return ret;
+    }
+
+    protected Bitmap getNewBitmap() {
+        return mBitmap.copy(mBitmap.getConfig(), true);
+    }
+
+    protected void blur(final View view) {
+        if (mBitmap == null || mText == null)
+            return;
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                Bitmap bitmap = getNewBitmap();
+                int radius = 20;
+                if (isScale) {
+                    radius = 2;
+                    bitmap = getScaleBitmap(bitmap);
+                }
+
+                long startTime = System.currentTimeMillis();
+                final Bitmap ret = blur(bitmap, radius);
+                show(ret, System.currentTimeMillis() - startTime, view);
+            }
+        };
+        thread.start();
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    protected void show(final Bitmap bitmap, final long time, final View view) {
+        if (view != null) {
+            Run.onUiAsync(new Action() {
+                @Override
+                public void call() {
+                    view.setBackground(new BitmapDrawable(getResources(), bitmap));
+//                    show(time);
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mText = null;
+        if (mBitmap != null)
+            mBitmap.recycle();
+        mBitmap = null;
+    }
+
+//    @Override
+//    public void onClick(View v) {
+//        blur();
+//        isScale = !isScale;
+//    }
+
+    protected void show(long time) {
+        if (mTime != null)
+            mTime.setText(time + "ms");
+    }
+
+    public Bitmap blur(Bitmap bitmap, int radius) {
+        return StackBlur.blur(bitmap, radius, true);
+
+    }
+    private ViewTreeObserver.OnGlobalLayoutListener keyboardLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
+        @Override
+        public void onGlobalLayout() {
+            int heightDiff = rootLayout.getRootView().getHeight() - rootLayout.getHeight();
+            int contentViewTop = mAct.getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();
+
+            LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(mAct);
+
+            if(heightDiff <= contentViewTop){
+                onHideKeyboard();
+
+                Intent intent = new Intent("KeyboardWillHide");
+                broadcastManager.sendBroadcast(intent);
+            } else {
+                int keyboardHeight = heightDiff - contentViewTop;
+                onShowKeyboard(keyboardHeight);
+
+                Intent intent = new Intent("KeyboardWillShow");
+                intent.putExtra("KeyboardHeight", keyboardHeight);
+                broadcastManager.sendBroadcast(intent);
+            }
+        }
+    };
+
+    private boolean keyboardListenersAttached = false;
+    private ViewGroup rootLayout;
+
+    protected void onShowKeyboard(int keyboardHeight) {}
+    protected void onHideKeyboard() {}
+
+    protected void attachKeyboardListeners() {
+        if (keyboardListenersAttached) {
+            return;
+        }
+
+        rootLayout = (ViewGroup) containerview;
+        rootLayout.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
+
+        keyboardListenersAttached = true;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if (keyboardListenersAttached) {
+            rootLayout.getViewTreeObserver().removeGlobalOnLayoutListener(keyboardLayoutListener);
+        }
+    }
+
+
 }

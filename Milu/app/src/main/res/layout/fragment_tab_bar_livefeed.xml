@@ -17,8 +17,16 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_Onyx"
-        android:alpha="0.5"/>
+        android:background="@drawable/gradient_meetup"/>
+    <com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager
+        android:id="@+id/livefeed_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:paddingTop="?attr/actionBarSize"
+        android:paddingBottom="@dimen/dimen_48"/>
+
     <LinearLayout
         android:id="@+id/empty_feed_view"
         android:layout_width="wrap_content"
@@ -43,25 +51,6 @@
             android:gravity="center"
             android:text="there are no feed items\n pull to refresh or\ncreate a palce or event"/>
     </LinearLayout>
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/livefeed_RecyclerView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:paddingTop="?attr/actionBarSize"-->
-        <!--android:paddingBottom="@dimen/dimen_48"-->
-        <!--android:clipChildren="false"-->
-        <!--android:clipToPadding="false"-->
-        <!--android:background="@color/color_Onyx"/>-->
-    <com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager
-        android:id="@+id/livefeed_RecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:clipChildren="false"
-        android:paddingTop="?attr/actionBarSize"
-        android:paddingBottom="@dimen/dimen_48"
-        android:background="@color/color_Onyx"/>
-
     <include layout="@layout/layout_toolbar" />
 
 </FrameLayout>

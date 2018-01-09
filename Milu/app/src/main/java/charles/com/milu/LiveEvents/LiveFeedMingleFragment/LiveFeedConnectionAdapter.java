@@ -13,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import charles.com.milu.R;
+import charles.com.milu.Utility.SquareAvatarImageView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -42,7 +43,7 @@ public class LiveFeedConnectionAdapter extends RecyclerView.Adapter<LiveFeedConn
             connectionImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.connectionItemClicked(v, getAdapterPosition());
+//                    listener.connectionItemClicked(v, getAdapterPosition());
                 }
             });
         }
@@ -59,7 +60,6 @@ public class LiveFeedConnectionAdapter extends RecyclerView.Adapter<LiveFeedConn
 
         connectionName.setText(connectionItem.getConnectionName());
         connectionLevel.setText(connectionItem.getConnectionLevel());
-//        connectionImage.setImageResource(connectionItem.getConnectionImage());
         Picasso.with(mContext).load(connectionItem.getConnectionImage()).into(connectionImage);
 
     }

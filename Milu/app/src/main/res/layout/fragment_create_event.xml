@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="?attr/actionBarSize"
-        android:paddingBottom="44dp"
+        android:paddingBottom="48dp"
         android:clipToPadding="false"
         android:clipChildren="false">
 
@@ -542,7 +542,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/color_TitleBar">
+            android:background="@drawable/gradient_meetup">
 
 
             <LinearLayout
@@ -598,7 +598,7 @@
                         android:layout_height="2dp"
                         android:background="@color/color_Milumain"
                         android:layout_alignParentBottom="true"
-                        android:visibility="gone"
+                        android:visibility="invisible"
                         />
                 </RelativeLayout>
             </LinearLayout>
@@ -606,9 +606,13 @@
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_240"
-                app:mcv_showOtherDates="all"
+                app:mcv_showOtherDates="none"
                 app:mcv_selectionColor="@color/color_Milumain"
-                app:mcv_tileHeight="0dp" />
+                app:mcv_dateTextAppearance="@style/calendarTextstyle"
+                app:mcv_tileHeight="0dp"
+                app:mcv_arrowColor="@color/transparent"
+                app:mcv_leftArrowMask="@color/transparent"
+                app:mcv_rightArrowMask="@color/transparent"/>
 
             <TimePicker
                 android:id="@+id/timepicker"
@@ -623,7 +627,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_gravity="end"
-                android:layout_marginBottom="@dimen/dimen_08"
+                android:layout_marginBottom="@dimen/dimen_56"
                 android:gravity="end">
 
                 <charles.com.milu.utils.CustomClickTextView

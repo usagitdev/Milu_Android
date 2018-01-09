@@ -8,14 +8,13 @@
     android:orientation="vertical"
     android:background="@color/bb_darkBackgroundColor">
 
-    <com.jgabrielfreitas.core.BlurImageView
+    <ImageView
         android:id="@+id/blurred_background_image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:radius="10"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/user06"/>
+        android:layout_marginTop="56dp"
+        android:src="@drawable/gradient_meetup"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

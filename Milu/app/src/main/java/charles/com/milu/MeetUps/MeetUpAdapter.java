@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import charles.com.milu.HotEvents.HotEventAdapter;
@@ -24,8 +25,8 @@ import charles.com.milu.R;
 
 public class MeetUpAdapter extends RecyclerView.Adapter<MeetUpAdapter.ViewHolder>{
 
-    Typeface workSans_Light;
 
+    ArrayList<MeetUpItem> selectedItmes = new ArrayList<>();
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView meetUpName;
@@ -36,26 +37,15 @@ public class MeetUpAdapter extends RecyclerView.Adapter<MeetUpAdapter.ViewHolder
 
             super(itemView);
 
-            workSans_Light = Typeface.createFromAsset(mContext.getAssets(),"WorkSans-Light.ttf");
 
             meetUpName = (TextView) itemView.findViewById(R.id.meetUp_title);
 
-            meetUpName.setTypeface(workSans_Light);
-            selectedItemImage = (ImageView)itemView.findViewById(R.id.meetUp_selectImage);
+            selectedItemImage = (ImageView)itemView.findViewById(R.id.meetUp_list_selector);
 
-            if (isselected){
-                selectedItemImage.setImageResource(R.drawable.contacts_gallery_unselected2);
-            }
             meetUpCell = (ImageView) itemView.findViewById(R.id.meetUp_cell);
             meetUpCell.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    isselected = !isselected;
-                    if (isselected){
-                        selectedItemImage.setImageResource(R.drawable.contacts_gallery_selected);
-                    }else{
-                        selectedItemImage.setImageResource(R.drawable.contacts_gallery_unselected2);
-                    }
                     listener.meetUpCell_Clicked(v, getAdapterPosition());
 
                 }
@@ -63,18 +53,36 @@ public class MeetUpAdapter extends RecyclerView.Adapter<MeetUpAdapter.ViewHolder
         }
     }
 
+    public boolean isselected(int position){
+        return selectedItmes.contains(mContacts.get(position));
+    }
+
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int position) {
 
         MeetUpItem meetupItem = mContacts.get(position);
+        if (isselected(position)){
+            viewHolder.selectedItemImage.setVisibility(View.VISIBLE);
+        }else{
+            viewHolder.selectedItemImage.setVisibility(View.GONE);
+        }
 
         TextView meetUpName = viewHolder.meetUpName;
         ImageView meetUpCell = viewHolder.meetUpCell;
 
-//        meetUpCell.setImageResource(meetupItem.getMeetupImage());
         Picasso.with(mContext).load(meetupItem.getMeetupImage()).into(meetUpCell);
         meetUpName.setText(meetupItem.getMeetupName());
 
+    }
+
+    public void setSelectedItem(int position) {
+        selectedItmes.add(mContacts.get(position));
+        notifyItemChanged(position);
+    }
+
+    public void setunSelectedItem(int position) {
+        selectedItmes.remove(mContacts.get(position));
+        notifyItemChanged(position);
     }
 
     private List<MeetUpItem> mContacts;
@@ -100,7 +108,7 @@ public class MeetUpAdapter extends RecyclerView.Adapter<MeetUpAdapter.ViewHolder
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
 
-        View contactView = inflater.inflate(R.layout.meetupcellitem, parent, false);
+        View contactView = inflater.inflate(R.layout.meetup_setup1_cell, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(contactView);
 

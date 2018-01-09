@@ -2,6 +2,9 @@ package charles.com.milu.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.DisplayMetrics;
 
 /**
@@ -30,5 +33,21 @@ public class CommonUtils {
         float dp = px / ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return dp;
     }
+    public static boolean isInternetConnected(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService
+                (Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnectedOrConnecting();
+
+    }
+
+    public static boolean isGpsEnable(Context context) {
+        final LocationManager manager = (LocationManager) context.getSystemService(Context
+                .LOCATION_SERVICE);
+
+        return manager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
 
 }

@@ -22,11 +22,16 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.jgabrielfreitas.core.BlurImageView;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.DayViewDecorator;
+import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
+
 import butterknife.BindView;
 import charles.com.milu.Base.BaseFragment;
 import charles.com.milu.CustomViews.TitleTextView;
@@ -159,6 +164,20 @@ public class CreateEventFragment extends BaseFragment {
         super.initView();
         setToolBar();
         setButtons();
+        calendarView.setDateTextAppearance(R.color.white);
+        calendarView.addDecorator(new DayViewDecorator() {
+            @Override
+            public boolean shouldDecorate(CalendarDay day) {
+                Calendar cal1 = day.getCalendar();
+                Calendar cal2 = Calendar.getInstance();
+                return false;
+            }
+
+            @Override
+            public void decorate(DayViewFacade view) {
+
+            }
+        });
     }
 
     @Override
@@ -215,12 +234,12 @@ public class CreateEventFragment extends BaseFragment {
             txtStartTitle.setTextColor(ContextCompat.getColor(getContext(), R.color.colorWhite));
             txtEndTitle.setTextColor(ContextCompat.getColor(getContext(), R.color.color_DimGray));
             lineStart.setVisibility(View.VISIBLE);
-            lineEnd.setVisibility(View.GONE);
+            lineEnd.setVisibility(View.INVISIBLE);
         }else{
             txtEndTitle.setTextColor(ContextCompat.getColor(getContext(), R.color.colorWhite));
             txtStartTitle.setTextColor(ContextCompat.getColor(getContext(), R.color.color_DimGray));
             lineEnd.setVisibility(View.VISIBLE);
-            lineStart.setVisibility(View.GONE);
+            lineStart.setVisibility(View.INVISIBLE);
         }
     }
 

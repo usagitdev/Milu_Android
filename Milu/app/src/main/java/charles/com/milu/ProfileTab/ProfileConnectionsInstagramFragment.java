@@ -17,12 +17,9 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
-
 import butterknife.BindView;
 import charles.com.milu.Base.BaseFragment;
 import charles.com.milu.Items.RecyclingImageView;
-import charles.com.milu.MiluApplication;
 import charles.com.milu.R;
 import charles.com.milu.utils.logger.Images;
 import charles.com.milu.utils.util.Utils;

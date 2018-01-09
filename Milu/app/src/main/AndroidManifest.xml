@@ -3,19 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="charles.com.milu">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera2.CaptureRequest" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- WebRTC Dependencies -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="false"
+        android:smallScreens="true"
+        tools:targetApi="donut" />
+    <!--android:name="android.support.multidex.MultiDexApplication"-->
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
+        android:name=".MiluApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,6 +50,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA7rVQDL257fM4Hv0pBfByPXCOfdDgILd4" />
 
+        <!--<meta-data tools:replace="android:value"/>-->
+
         <activity android:name=".Splash.splash"
             tools:ignore="InnerclassSeparator">
             <intent-filter>
@@ -36,8 +60,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login.LoginActivity"
-            tools:ignore="InnerclassSeparator"/>
         <activity android:name=".Login.RegistrationActivity"
             tools:ignore="InnerclassSeparator" />
         <activity android:name=".Base.MainActivity"
@@ -49,10 +71,20 @@
         <activity android:name=".LiveEvents.LiveMediaPost.LiveMediaPostMainActivity"
             tools:ignore="InnerclassSeparator" />
         <activity android:name=".MediaSelect_Activity.MediaSelectActivity"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme"
+            />
         <activity android:name=".utils.awesomeimagepicker.activities.AlbumSelectActivity"/>
         <activity android:name=".utils.awesomeimagepicker.activities.ImageSelectActivity"/>
-        <activity android:name=".LiveEvents.LiveFeedMingleFragment.LiveMingleInstagramActivity"/>
+        <activity android:name=".LiveEvents.LiveFeedMingleFragment.LiveMingleInstagramActivity"
+            tools:ignore="InnerclassSeparator"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme"
+            />
+
+        <service android:name=".Services.LocationService"
+            tools:ignore="InnerclassSeparator" />
 
     </application>
 

@@ -42,7 +42,11 @@
   <string name="clear_cache_complete_toast">Caches have been cleared</string>
   <string name="imageview_description">Image Thumbnail</string>
   <string name="no_network_connection_toast">No network connection found</string>
-  <string name="str_login">oops! you must be logged in to send and accept invitations.\n\nlog in now to use all of the amazing features of milu!</string>
+  <string name="str_invitation_login">oops! you must be logged in to send and accept invitations.\n\nlog in now to use all of the amazing features of milu!</string>
+  <string name="str_create_login">oops! you must be logged in to view, and create your events.\n\nlog in now to use all of the amazing features of milu!</string>
+  <string name="str_calendar_login">oops! you must be logged in to use your calendar.\n\nlog in now to use all of the amazing features of milu!</string>
+  <string name="str_comment_login">oops! you must be logged in to like, comment and upvote.\n\nlog in now to use all of the amazing features of milu!</string>
+  <string name="str_meetup_login">oops! you must be logged in to set up and use meetup.\n\nlog in now to use all of the amazing features of milu!</string>
   <string name="help_amp_support"><![CDATA[help & support]]></string>
   <string name="event_setting_des">turning mingle on will allow people at your event to connect virtually at the event based on their preferences. turning on networking will ignore user preferences and allow professional connections to be made with everyone!</string>
   <!--Request Permission-->
@@ -59,5 +63,21 @@
   <string name="add">SELECT</string>
   <string name="capture_photo">Capture Photo</string>
   <string name="dorisnichols">Doris Nichols</string>
+  <string name="image">Image</string>
+  <string name="popular_in_health_wellness"><![CDATA[popular in health & wellness]]></string>
+  <string name="popular_in_tech">popular in tech</string>
+  <string name="farmtotabledinner">farm to table dinner date</string>
+  <string name="_1273_glendale_ave_san_francisco_ca_94121">1273 glendale ave, san francisco, ca 94121</string>
+  <string name="http_farmtotable_com_tickets">http://farmtotable.com/tickets</string>
+  <string name="when_some_meeting">When someone mentions barbecue images comes to the mind like cooking at the backyard grill, a social gathering, cooking outdoors and cooking meat slowly over wood and smoke that adds flavor to the food. Different cooks have different preferences and style in their cooking. Some prefer rubbing the seasoning whether wet or dry prior to cooking and some prefers to soak the meat first in special marinades that could be sops, mops and finishing. The preparation and ingredients for marinating may differ from region to region the preferred wood to be used can also differ. However, no perfect barbecue will taste as good without the perfect barbecue sauce.</string>
+  <string name="locationname">san francisco, ca</string>
+  <string name="current_location">current location</string>
+  <string name="pick_some_meetups_that_interest_you">pick some meetups that interest you</string>
+  <string name="therearenoevents">there are no events today\nfind something to do</string>
+  <string name="you_re_out_of_matchescheck_back_later_to_seeif_someone_else_arrives">you’re out of matchescheck back later to seeif someone else arrives</string>
+  <string name="monday_friday_n9_00a_5_00p">monday-friday\n9:00A-5:00P</string>
+  <string name="saturday_n11_00a_5_00p">saturday\n11:00A-5:00P</string>
+  <string name="sunday_nclosed">sunday\nCLOSED</string>
+  <string name="havingablastatso">having a blast at some party with my friends</string>
 </resources>
 

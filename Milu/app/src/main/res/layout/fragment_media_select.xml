@@ -6,7 +6,7 @@
     tools:context="charles.com.milu.MediaSelect_Fragment.MediaSelect_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <charles.com.milu.CustomViews.TitleTextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

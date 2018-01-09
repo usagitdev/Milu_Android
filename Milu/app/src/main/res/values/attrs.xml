@@ -93,5 +93,15 @@
         <!-- @hide The drawable for pressed virtual (increment/decrement) buttons. -->
         <attr name="virtualButtonPressedDrawable" format="reference" />
     </declare-styleable>
+    <declare-styleable name="TtCalendar">
+
+        <!-- 星期的文字 -->
+        <attr name="weekTextStyle" format="reference" />
+        <attr name="dayTextStyle" format="reference" />
+        <attr name="todayTextStyle" format="reference" />
+        <attr name="notCurrentTextStyle" format="reference" />
+        <!-- 日期选择的背景 -->
+        <attr name="daySelector" format="reference" />
+    </declare-styleable>
 
 </resources>

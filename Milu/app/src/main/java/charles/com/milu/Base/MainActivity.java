@@ -1,39 +1,25 @@
 package charles.com.milu.Base;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.TextView;
 
 
 import com.jaeger.library.StatusBarUtil;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.List;
 
-import butterknife.BindView;
-import charles.com.milu.Adapters.BaseActivity;
 import charles.com.milu.R;
-import charles.com.milu.utils.Utilities;
+import pl.tajchert.nammu.Nammu;
 
 /**
  * Hai Nguyen - 11/2/15.
@@ -59,7 +45,12 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 
 		printKeyHash(this);
 //		viewBottom.setVisibility(View.INVISIBLE);
+		Nammu.init(this);
+		startLocationService();
+
+
 	}
+
 	@Override
 	protected void setStatusBar() {
 		StatusBarUtil.setTranslucentForImageViewInFragment(MainActivity.this, null);
@@ -153,6 +144,22 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 //// set the transparent color of the status bar, 20% darker
 //		tintManager.setTintColor(Color.parseColor("#20000000"));
 	}
+
+	@Override
+	public void onLocationChanged(Location location) {
+
+	}
+
+	@Override
+	public void onGpsConnectionChanged(boolean isConnected) {
+
+	}
+
+	@Override
+	public void onNetworkConnectionChanged(boolean isConnected) {
+
+	}
+
 	public interface IOnFocusListenable {
 		public void onWindowFocusChanged(boolean hasfocus);
 	}

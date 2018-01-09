@@ -9,14 +9,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.nightonke.wowoviewpager.Animation.ViewAnimation;
 import com.nightonke.wowoviewpager.Animation.WoWoAlphaAnimation;
 import com.nightonke.wowoviewpager.Animation.WoWoBackgroundColorAnimation;
-import com.nightonke.wowoviewpager.Animation.WoWoLayerListColorAnimation;
-import com.nightonke.wowoviewpager.Animation.WoWoPosition3DAnimation;
 import com.nightonke.wowoviewpager.Animation.WoWoPositionAnimation;
 import com.nightonke.wowoviewpager.Animation.WoWoRotationAnimation;
 import com.nightonke.wowoviewpager.Animation.WoWoScaleAnimation;
@@ -24,9 +21,11 @@ import com.nightonke.wowoviewpager.Enum.Chameleon;
 import com.nightonke.wowoviewpager.Enum.Ease;
 import com.nightonke.wowoviewpager.WoWoViewPager;
 import com.nightonke.wowoviewpager.WoWoViewPagerAdapter;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import charles.com.milu.Base.MainActivity;
 import charles.com.milu.CustomViews.TitleTextView;
+import charles.com.milu.MiluApplication;
 import charles.com.milu.R;
 import charles.com.milu.utils.logger.Log;
 
@@ -47,6 +46,8 @@ public class RegistrationActivity extends AppCompatActivity {
     }
     protected int screenW;
     protected int screenH;
+
+    AVLoadingIndicatorView progressBar;
 
     TitleTextView textView1;
     TitleTextView textView2;
@@ -91,7 +92,7 @@ public class RegistrationActivity extends AppCompatActivity {
         imageView3 = (ImageView)findViewById(R.id.imageView3);
         imageView4 = (ImageView)findViewById(R.id.imageView4);
         backgroundImageview = (FrameLayout)findViewById(R.id.background_image_view);
-
+        progressBar = (AVLoadingIndicatorView)findViewById(R.id.progressBar);
         init();
 
         wowo = (WoWoViewPager)findViewById(R.id.wowo_viewpager);
@@ -109,14 +110,14 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        if (mImmersionBar != null)
-//            mImmersionBar.destroy();
+        if (mImmersionBar != null)
+            mImmersionBar.destroy();
     }
 
     public void setStatusBar(){
 
-//        mImmersionBar = ImmersionBar.with(this);
-//        mImmersionBar.init();
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.init();
 
     }
 
@@ -129,8 +130,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private void addAnimations() {
         if (animationAdded) return;
         animationAdded = true;
-
-
         screenW = WoWoUtil.getScreenWidth(this);
         screenH = WoWoUtil.getScreenHeight(this);
 
@@ -217,6 +216,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     private void init() {
+        progressBar.hide();
     }
 
     private void setPageTV(WoWoViewPager wowo) {
@@ -299,18 +299,44 @@ public class RegistrationActivity extends AppCompatActivity {
         icon3 = (ImageView) findViewById(R.id.icon3);
     }
     public void floginClicked(View view){
+        ((MiluApplication) getApplication()).appInfo.saveLogin(true);
+        progressBar.smoothToShow();
+        Thread myThread = new Thread() {
 
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
+            public void run() {
+                try {
+                    sleep(1000);
+//                    progressBar.hide();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        myThread.start();
     }
 
     public void skipClicked(View view){
 
-        Toast.makeText(getApplicationContext(),"Skip Button Clicked!!", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
+        ((MiluApplication) getApplication()).appInfo.saveLogin(false);
+        progressBar.smoothToShow();
+        Thread myThread = new Thread() {
+
+            public void run() {
+                try {
+                    sleep(1000);
+//                    progressBar.hide();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        myThread.start();
 
     }
 

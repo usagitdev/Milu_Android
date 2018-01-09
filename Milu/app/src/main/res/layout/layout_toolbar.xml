@@ -14,20 +14,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp5"
-                android:padding="5dp"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:src="@drawable/nav_bar_back_icon"
                 android:visibility="visible" />
 
             <charles.com.milu.CustomViews.TitleTextView
                 android:id="@+id/toolbar_txt_left"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/dimen_42"
+                android:layout_marginStart="@dimen/dimen_72"
                 android:gravity="center"
                 android:text="@string/app_name"
                 android:textColor="@color/color_Milumain"
                 android:textSize="22sp"
-                android:layout_toRightOf="@+id/toolbar_btn_left"
                 android:visibility="visible"
                 tools:ignore="RtlHardcoded" />
 
@@ -37,8 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/toolbar_btn_right2"
-                android:layout_marginEnd="@dimen/dimen_12"
-                android:padding="5dp"
+                android:layout_marginEnd="@dimen/dimen_16"
                 tools:ignore="RtlHardcoded" />
 
             <charles.com.milu.utils.CustomImageButton
@@ -47,8 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:padding="5dp"
-                android:layout_marginEnd="@dimen/dimen_12"/>
+                android:layout_marginEnd="@dimen/dimen_16"/>
         </RelativeLayout>
 
 

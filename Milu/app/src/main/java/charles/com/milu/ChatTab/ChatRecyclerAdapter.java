@@ -10,11 +10,12 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import charles.com.milu.R;
-import charles.com.milu.models.MessageObject;
+import charles.com.milu.Models.MessageObject;
+import charles.com.milu.Models.UserModel;
 
 
 /**
- * Created by PIG18 on 1/23/2017.
+ * Created by PIG18 on 11/23/2017.
  */
 
 public class ChatRecyclerAdapter extends RecyclerView.Adapter<ChatViewHolder> {
@@ -24,14 +25,13 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     String                      strUserName;
     String                      strFriendName;
     String                      strFriendAvatar;
+    ArrayList<UserModel>        recepiants;
 
-    public ChatRecyclerAdapter(Context context, ArrayList<MessageObject> arrayChats, int userId, String uName, String fName, String nfavatar){
+    public ChatRecyclerAdapter(Context context, ArrayList<MessageObject> arrayChats, ArrayList<UserModel> receivers){
         mContext = context;
-        nCurrentUserId = userId;
+        nCurrentUserId = 0;
         mChatList = arrayChats;
-        strUserName = uName;
-        strFriendName = fName;
-        strFriendAvatar = nfavatar;
+        recepiants = receivers;
     }
 
 
@@ -81,9 +81,9 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
         int ntype = getItemViewType(position);
         if(ntype == 1){
-            holder.bindData(message1, strUserName, strFriendName, "0", ntype);
+            holder.bindData(message1, recepiants.get(0));
         }else if(ntype == 2){
-            holder.bindData(message1, strFriendName, strUserName, strFriendAvatar, ntype);
+            holder.bindData(message1, recepiants.get(0));
         }
     }
 

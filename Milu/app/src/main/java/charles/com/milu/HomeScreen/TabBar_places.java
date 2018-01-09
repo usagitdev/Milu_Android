@@ -35,6 +35,7 @@ import charles.com.milu.LiveEvents.LiveEventFragment;
 import charles.com.milu.PlacesTab.FavoritePlacesFragment;
 import charles.com.milu.PlacesTab.LivePlacesFragment;
 import charles.com.milu.PlacesTab.NearbyPlacesFragment;
+import charles.com.milu.PlacesTab.PlaceMapFragment;
 import charles.com.milu.PlacesTab.PopularPlacesFragment;
 import charles.com.milu.R;
 import charles.com.milu.utils.util.ImageCache;
@@ -100,13 +101,26 @@ public class TabBar_places extends BaseFragment implements OnMapReadyCallback{
         txtLeft.setText("milu");
         assert rightButton1 != null;
         rightButton1.setImageResource(R.drawable.nav_bar_add_icon);
+        rightButton1.setOnClickListener(this);
         assert rightButton2 != null;
         rightButton2.setImageResource(R.drawable.nav_bar_search_icon);
+        rightButton2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         super.onClick(view);
+        switch (view.getId()) {
+            case R.id.toolbar_btn_right2:
+                break;
+            case R.id.toolbar_btn_right1:
+                showPlacesMapFragment();
+                break;
+        }
+    }
+
+    public void showPlacesMapFragment(){
+        addFragment(PlaceMapFragment.getInstance(), true);
     }
 
     public void setPlaces() {

@@ -39,6 +39,42 @@
             android:textSize="22sp"/>
     </RelativeLayout>
 
+    <FrameLayout
+        android:id="@+id/visual_recording"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+        <com.tyorikan.voicerecordingvisualizer.VisualizerView
+            android:id="@+id/visualizer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/transparent"
+            app:numColumns="500"
+            app:renderColor="@color/white"
+            app:renderRange="both"
+            app:renderType="bar"/>
 
+    </FrameLayout>
+
+    <charles.com.milu.CustomViews.RegularTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="what’s happening?"
+        android:textColor="@color/white"
+        android:textSize="14.0sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/lay_96"/>
+
+
+    <ImageButton
+        android:id="@+id/record_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/voice_reocord_stop_recording_icon"
+        android:background="@color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

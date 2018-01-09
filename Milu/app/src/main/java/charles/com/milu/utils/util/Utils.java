@@ -22,7 +22,7 @@ import android.os.Build.VERSION_CODES;
 import android.os.StrictMode;
 
 
-import charles.com.milu.Adapters.BaseActivity;
+import charles.com.milu.Base.BaseActivity;
 
 /**
  * Class containing some static utility methods.

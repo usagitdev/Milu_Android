@@ -646,6 +646,7 @@
                 android:background="@color/grid_state_focused"
                 android:orientation="vertical">
                 <charles.com.milu.utils.CustomClickTextView
+                    android:id="@+id/btn_logout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_31"
                     android:layout_weight="2"

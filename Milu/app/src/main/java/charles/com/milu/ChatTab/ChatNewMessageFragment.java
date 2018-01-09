@@ -2,6 +2,7 @@ package charles.com.milu.ChatTab;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,6 +22,7 @@ import java.util.Random;
 import butterknife.BindView;
 import charles.com.milu.Base.BaseFragment;
 import charles.com.milu.CustomViews.TitleTextView;
+import charles.com.milu.HomeScreen.TabBar_chatting;
 import charles.com.milu.R;
 import charles.com.milu.utils.CustomImageButton;
 
@@ -78,7 +80,8 @@ public class ChatNewMessageFragment extends BaseFragment implements NewMessageAd
     @Override
     public void mEventCell_Clicked(View v, int adapterPosition) {
         conversation_name.setText(adapter.getmContacts().get(adapterPosition).getUserName());
-        addFragment(new ChatRoomFragment().getInstance(), true);
+        mAct.onBackPressed();
+        addFragment(ChatRoomFragment.getInstance(), true);
     }
 }
 

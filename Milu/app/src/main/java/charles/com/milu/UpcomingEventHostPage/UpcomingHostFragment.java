@@ -57,6 +57,7 @@ import butterknife.BindView;
 import charles.com.milu.Base.BaseFragment;
 import charles.com.milu.EventBusListeners.ReplaceFragmentListener;
 import charles.com.milu.LiveEvents.LiveFeedMain.LiveFeedMainFragment;
+import charles.com.milu.PlacesTab.PlaceMapFragment;
 import charles.com.milu.R;
 import charles.com.milu.UpComingEvents.UpComingFragment;
 import charles.com.milu.Utility.SquareImageView;
@@ -65,13 +66,12 @@ import charles.com.milu.utils.logger.Images;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UpcomingHostFragment extends BaseFragment implements OnMapReadyCallback , GravitySnapHelper.SnapListener{
+public class UpcomingHostFragment extends BaseFragment implements OnMapReadyCallback , GravitySnapHelper.SnapListener, GoogleMap.OnMarkerClickListener{
 
     Typeface workSans_Light;
     private GoogleMap mMap;
     private Marker customMarker;
     private LatLng markerLatLng;
-    private MapView mapView;
     private GoogleMap googleMap;
     private RelativeLayout mTitleBarBlurLayout;
 
@@ -86,6 +86,9 @@ public class UpcomingHostFragment extends BaseFragment implements OnMapReadyCall
 
     @BindView(R.id.upcomingHost_PeopleRecyclerView)
     RecyclerView peopleRecyclerView;
+
+    @BindView(R.id.map)
+    MapView mapView;
 
 
     public static UpcomingHostFragment getInstance() {
@@ -169,7 +172,6 @@ public class UpcomingHostFragment extends BaseFragment implements OnMapReadyCall
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mapView = (MapView) view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
         mapView.getMapAsync(this);
@@ -194,6 +196,7 @@ public class UpcomingHostFragment extends BaseFragment implements OnMapReadyCall
                 .position(sydney)
                 .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.arts))));
         map.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        map.setOnMarkerClickListener(this);
 
     }
 
@@ -220,6 +223,12 @@ public class UpcomingHostFragment extends BaseFragment implements OnMapReadyCall
     @Override
     public void onSnap(int position) {
 
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        addFragment(PlaceMapFragment.getInstance(), true);
+        return true;
     }
 
     public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {

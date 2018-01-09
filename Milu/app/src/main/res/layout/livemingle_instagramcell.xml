@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:fontPath="http://schemas.android.com/tools"
     android:orientation="horizontal">
 
-    <ImageView
+    <charles.com.milu.Utility.SquareAvatarImageView
         android:id="@+id/liveMingle_InstagramCell"
-        android:layout_width="fill_parent"
-        android:layout_height="120dp"
-        android:background="@drawable/beliefs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/user08"
         android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:id="@+id/instagram_more_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/mingle_instagram_more_icon"/>
+
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_width="85.0dp"
+            android:layout_height="wrap_content"
+            android:text="SEE MORE ON INSTAGRAM"
+            android:textColor="@color/color_Manatee"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="12.0sp"/>
+    </LinearLayout>
+
 
 </RelativeLayout>
 

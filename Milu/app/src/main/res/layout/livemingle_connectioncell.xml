@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:fontPath="http://schemas.android.com/tools">
-
-
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="103dp">
-
-        <charles.com.milu.CustomViews.TitleTextView
-            android:layout_width="20dp"
-            android:layout_height="11dp"
-            android:text="1st"
-            android:id="@+id/liveMingle_ConnectionLevel"
-            android:textAlignment="inherit"
-            android:textSize="10sp"
-            android:textColor="@color/color_OuterSpace"
-            android:layout_alignParentStart="true"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/liveMingle_ConnectionImage"
-            android:layout_width="86dp"
-            android:layout_height="86dp"
-            android:layout_centerHorizontal="true"
-            app:civ_border_width="0.5dp"
-            app:civ_border_color="@color/colorBlack"/>
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@drawable/user01"/>
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/liveMingle_ConnectionLevel"
+            android:textSize="14sp"
+            android:textColor="@color/color_OuterSpace"/>
+        <charles.com.milu.CustomViews.TitleTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="st"
+            android:layout_toRightOf="@+id/liveMingle_ConnectionLevel"
+            android:textSize="10sp"
+            android:textColor="@color/color_OuterSpace"/>
+
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/liveMingle_ConnectionName"
             android:layout_below="@+id/liveMingle_ConnectionImage"
             android:textSize="11sp"
             android:textColor="@color/color_Oldlavender"
             android:gravity="center"
-            android:text="kevin mccoy"/>
+            android:text="kevin mccoy"
+            android:layout_alignEnd="@+id/liveMingle_ConnectionImage"
+            android:layout_alignStart="@+id/liveMingle_ConnectionImage"/>
 
     </RelativeLayout>
 
-</RelativeLayout>
+
+</LinearLayout>

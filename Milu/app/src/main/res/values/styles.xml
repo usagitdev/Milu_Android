@@ -103,6 +103,13 @@
         <item name="colorControlNormal">@color/color_DimGray</item>
     </style>
 
+    <style name="calendarTextstyle" parent="TextAppearance.MaterialCalendarWidget.Date">
+        <item name="textColor">@color/white</item>
+        <item name="textSize">16sp</item>
+        <item name="android:textAppearance">?android:dateTextAppearance</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
     <style name="NPWidget">
         <item name="android:textAppearance">?android:attr/textAppearance</item>
     </style>
@@ -122,6 +129,48 @@
         <item name="internalMinWidth">50dip</item>
         <item name="internalMaxHeight">150dip</item>
         <!--<item name="virtualButtonPressedDrawable">@drawable/item_background_holo_dark</item>-->
+    </style>
+
+
+    <style name="textView_sp12_green">
+        <item name="android:textColor">@color/Deepsky</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+
+    <style name="textView_sp12_grey_light">
+        <item name="android:textColor">@color/color_DimGray</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="textView_sp12_white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="textView_sp13_grey_bg_bold">
+        <item name="android:textColor">@color/transparent</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+
+    <style name="BlurDialogTheme" parent="Theme.AppCompat.DayNight.Dialog">
+        <!-- forces Dialog view to be expanded to full screen -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/colorDialogClear</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogSlideAnimation</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="BlurAlertDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogSlideAnimation</item>
     </style>
 
 </resources>

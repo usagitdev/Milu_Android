@@ -5,13 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/calMain_Layout"
     android:orientation="vertical"
-    android:background="@color/bb_darkBackgroundColor">
+    android:background="@drawable/gradient_meetup">
 
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/calCollectionView"
@@ -21,8 +17,8 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/calCollection_RecyclerView"
+                android:paddingBottom="48dp"
                 android:paddingTop="@dimen/dimen_56"
-                android:paddingBottom="44dp"
                 android:clipToPadding="false"
                 android:clipChildren="false"
                 android:layout_width="match_parent"
@@ -34,39 +30,107 @@
         <LinearLayout
             android:id="@+id/calListView"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:weightSum="408"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/dimen_56">
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_56"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="291"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/weekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:layout_below="@+id/action_bar"
+                    android:background="@drawable/nav_bar_vd"
+                    android:orientation="horizontal">
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:text="S"
+                        android:paddingBottom="@dimen/dimen_08"
+                        android:layout_weight="1"
+                        android:textSize="14.0sp"
+                        android:textColor="@color/color_Oldlavender"
+                        android:gravity="center_horizontal"/>
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                        android:paddingBottom="@dimen/dimen_08"
+                        android:layout_weight="1"
+                        android:textSize="14.0sp"
+                        android:textColor="@color/color_Oldlavender"
+                        android:gravity="center_horizontal"/>
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:text="T"
+                        android:paddingBottom="@dimen/dimen_08"
+                        android:layout_weight="1"
+                        android:textSize="14.0sp"
+                        android:textColor="@color/color_Oldlavender"
+                        android:gravity="center_horizontal"/>
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:text="W"
+                        android:paddingBottom="@dimen/dimen_08"
+                        android:layout_weight="1"
+                        android:textSize="14.0sp"
+                        android:textColor="@color/color_Oldlavender"
+                        android:gravity="center_horizontal"/>
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:text="T"
+                        android:paddingBottom="@dimen/dimen_08"
+                        android:layout_weight="1"
+                        android:textSize="14.0sp"
+                        android:textColor="@color/color_Oldlavender"
+                        android:gravity="center_horizontal"/>
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:text="F"
+                        android:paddingBottom="@dimen/dimen_08"
+                        android:layout_weight="1"
+                        android:textSize="14.0sp"
+                        android:textColor="@color/color_Oldlavender"
+                        android:gravity="center_horizontal"/>
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:text="S"
+                        android:paddingBottom="@dimen/dimen_08"
+                        android:layout_weight="1"
+                        android:textSize="14.0sp"
+                        android:textColor="@color/color_Oldlavender"
+                        android:gravity="center_horizontal"/>
 
-                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                </LinearLayout>
+
+                <charles.com.milu.CalendarView.calendarpageview.CalendarCardView
                     android:id="@+id/calendarView"
-                    android:background="@drawable/places_gradient"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:mcv_showOtherDates="all"
-                    app:mcv_selectionColor="#00F"
-                    app:mcv_tileHeight="0dp" />
+                    android:background="@drawable/places_gradient"
+                    >
 
-                <charles.com.milu.CustomViews.TitleTextView
-                    android:id="@+id/textView"
-                    android:layout_margin="16dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    />
+                </charles.com.milu.CalendarView.calendarpageview.CalendarCardView>
 
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_weight="117"
@@ -76,9 +140,34 @@
                     android:id="@+id/calEvent_RecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="fill_parent"
-                    android:paddingBottom="44dp"/>
+                    android:paddingBottom="48dp"/>
+                
+                <LinearLayout
+                    android:id="@+id/empty_feed_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/dimen_48"
+                    android:visibility="visible">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/empty_data_set_wink_icon"/>
+                    <charles.com.milu.CustomViews.TitleTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/therearenoevents"
+                        android:textSize="20.0sp"
+                        android:lines="2"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -93,13 +182,10 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="@dimen/dimen_56"/>
 
-    </RelativeLayout>
 
-    <include layout="@layout/layout_toolbar"/>
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/newEvent_RecyclerView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/layout_toolbar"/>
 
 </RelativeLayout>

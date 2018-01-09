@@ -3,8 +3,9 @@
   <component name="assetNames">
     <option name="mapping">
       <map>
-        <entry key="event_list_upcoming_bell_icon" value="event_list_upcoming_bell_white_icon" />
-        <entry key="tab_bar_user_icon_off" value="tab_bar_user_icon_on" />
+        <entry key="camera_stop_recording_icon" value="voice_reocord_stop_recording_icon" />
+        <entry key="nav_bar_check_mark_icon" value="nav_bar_check_mark_disable_icon" />
+        <entry key="photo_button" value="photo_share_button" />
       </map>
     </option>
   </component>

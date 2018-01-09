@@ -4,52 +4,23 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.graphics.Point;
-import android.graphics.Typeface;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.nightonke.wowoviewpager.Animation.ViewAnimation;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import charles.com.milu.Base.BaseFragment;
 import charles.com.milu.CustomViews.TabTitleTextView;
-import charles.com.milu.EventBusListeners.ReplaceFragmentListener;
-import charles.com.milu.HomeScreen.TabBar_userProfile;
-import charles.com.milu.HomeScreen.Tabbar_eventdash;
-import charles.com.milu.LiveEvents.LiveFeedChatFragment.LiveFeedChatFragment;
-import charles.com.milu.LiveEvents.LiveFeedMain.LiveFeedPageAdapter;
-import charles.com.milu.LiveEvents.LiveFeedMingleFragment.LiveFeedMingleFragment;
-import charles.com.milu.LiveEvents.LiveFeedPostFragment.LiveFeedDispFragment;
-import charles.com.milu.MeetUps.GridSpacingItemDecoration;
-import charles.com.milu.MeetUps.MeetUpAdapter;
-import charles.com.milu.MeetUps.MeetUpItem;
 import charles.com.milu.MiluApplication;
 import charles.com.milu.PreventScrollonPageView.NonSwipeableViewPager;
 import charles.com.milu.R;
-import charles.com.milu.utils.expandableselector.ExpandableItem;
-import charles.com.milu.utils.expandableselector.ExpandableSelector;
-import charles.com.milu.utils.expandableselector.OnExpandableItemClickListener;
 
 public class ProfileConnectionsFragment extends BaseFragment  {
 

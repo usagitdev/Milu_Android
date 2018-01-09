@@ -7,7 +7,6 @@ import android.view.WindowManager;
 
 import com.gyf.barlibrary.ImmersionBar;
 
-import charles.com.milu.Login.LoginActivity;
 import charles.com.milu.Login.RegistrationActivity;
 import charles.com.milu.R;
 
